@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "dashboard"><!-- Dashboard -->
+        <section class = "navigation"><!-- Navigation -->
+            <img src="image/attachment_93970207.png" alt="Web Logo" class="logo">
+
+            <div>
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="material-symbols-outlined">timeline</span>
+                <span class="material-symbols-outlined">group</span>
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="material-symbols-outlined">settings</span>
+            </div>
+
+        </section><!-- Navigation End -->
+
+        <section class = "main"><!-- Main -->
+            <div class = "search"><!-- Search -->
+                <form action="">
+                    <input type="text" name="search" id="searchTask" placeholder="Search Here">
+                    <span class="material-symbols-outlined">search</span>
+                </form> 
+                <div class="notification">
+                    <span class="material-symbols-outlined">notifications</span>
+                </div>
+            </div><!-- Search End -->
+
+            <div class="title">
+                <h1>Task Board</h1>
+            
+                <label for="tasks">Sort By</label>
+                <select name="tasks" id="taskFilter">
+                    <option value="">Filter</option>
+                    <option value="done">Done</option>
+                    <option value="progressing">In Progress</option>
+                    <option value="starting">To Do Task</option>
+                </select>
+                
+            </div>
+
+            <div class="task_list"><!-- Task Lists -->
+
+                <div class="task" data-status = "done" title="Done Task"><!-- Task 1 -->
+                    <div class="category"></div>
+                    <h2>UI Design</h2>
+                    <p>In Progress</p>
+
+                    <ul class="activity">
+                        <li>Low</li>
+                    </ul>
+                    </div>
+                </div> <!-- Task 1 End -->
+
+            </div><!-- Task Lists End -->
+
+
+        </section><!-- Main End -->
+
+    </div><!-- Dashboard End -->
+    
+    <script src="create.js"></script>
+</body>
+</html>
