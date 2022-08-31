@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap');
+
+body{
+    font-family: 'Mukta', sans-serif;
+    background-color: #ebf2ff;
+}
+
+.task__card:hover {
+    border: 3px solid #000000;
+}
+
+.hide {
+    display: none;
+}
