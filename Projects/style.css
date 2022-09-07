@@ -26,3 +26,20 @@ body{
 .modal-footer button{
     width: 210px;
 }
+
+.task__card__name text-white {
+    float: right;
+}
+
+.text-white {
+    float: left;
+}
+
+.card-footer {
+    margin-top: 20px;
+    width: 480px;
+    padding: 10px 5px;
+}
+.card-footer button{
+    margin-left: 330px;
+}

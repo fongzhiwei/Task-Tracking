@@ -17,10 +17,15 @@ const generateNewTask = (taskData) => `
   </div>
 
   <div class="card-body">
-    <h2 class="task__card__name" id="name">${taskData.taskName}</h2>
+    <h2 class="task__card__name" id="name">${taskData.taskName}
+    </h2>
       <p class="description trim-3-lines text-muted" id="desc" >${taskData.taskDesc}</p>
-      <div class="tags text-white d-flex flex-wrap"><span class="badge bg-primary m-1" id="priority">${taskData.taskPriority}</span></div>
-      <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="type">${taskData.taskType}</span>
+      <form>
+        <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="story">${taskData.storyPoint}</span>
+        <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="priority">${taskData.taskPriority}</span></div>
+        <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="type">${taskData.taskType}</span>
+        <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span>
+      </form>
   </div>
 
   <div class="card-footer">
@@ -53,6 +58,8 @@ const saveChanges = () => {
     taskType: document.getElementById("taskType").value,
     taskPriority: document.getElementById("taskPriority").value,
     taskDesc: document.getElementById("taskDesc").value,
+    taskStatus: document.getElementById("taskStatus").value,
+    storyPoint: document.getElementById("storyPoint").value,
   };
   taskCreation.insertAdjacentHTML("beforeend", generateNewTask(taskData));
 
@@ -88,6 +95,8 @@ const editTask = () => {
   document.getElementById("type").contentEditable = "true";
   document.getElementById("desc").contentEditable = "true";
   document.getElementById("priority").contentEditable = "true";
+  document.getElementById("status").contentEditable = "true";
+  document.getElementById("story").contentEditable = "true";
 };
 
 const saveEdit = () => {
@@ -95,16 +104,22 @@ const saveEdit = () => {
   const editType = document.getElementById("type").textContent;
   const editDesc = document.getElementById("desc").textContent;
   const editPrior = document.getElementById("priority").textContent;
+  const editStatus = document.getElementById("status").textContent;
+  const editPoint = document.getElementById("story").textContent;
 
   document.getElementById("name").innerHTML = editName;
   document.getElementById("type").innerHTML = editType;
   document.getElementById("desc").innerHTML = editDesc;
   document.getElementById("priority").innerHTML = editPrior;
+  document.getElementById("status").innerHTML = editStatus;
+  document.getElementById("story").innerHTML = editPoint;
 
   document.getElementById("name").contentEditable = "false";
   document.getElementById("desc").contentEditable = "false";
   document.getElementById("type").contentEditable = "false";
   document.getElementById("priority").contentEditable = "false";
+  document.getElementById("status").contentEditable = "false";
+  document.getElementById("story").contentEditable = "false";
 };
 
 

@@ -28,13 +28,31 @@
                 <input type="email" class="form-control" id="taskName" aria-describedby="emailHelp" placeholder="Login Information Update"/>
               </div>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
-                  >Task Type</label>
-                <input type="email" class="form-control" id="taskType" aria-describedby="emailHelp" placeholder="User Story / Bugs"/>
+                <label class="form-label" for="taskPriorityInput">Task Type</label> <br>
+                <select name="taskTypeInput" id="taskType">
+                    <option value="User Story">User Story</option>
+                    <option value="Bugs">Bugs</option>
+                </select>
               </div>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Task Priority</label>
-                <input type="email" class="form-control" id="taskPriority" aria-describedby="emailHelp" placeholder="Low / Normal / High"/>
+                <label class="form-label" for="storyPointInput">Story Points</label> <br>
+                <input type="number" min = "1" class="form-control" id="storyPoint">
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="taskPriorityInput">Task Priority</label> <br>
+                <select name="taskPriorityInput" id="taskPriority">
+                    <option value="Low">Low</option>
+                    <option value="Normal">Normal</option>
+                    <option value="High">High</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="taskStatus">Task Status</label> <br>
+                <select name="taskStatus" id="taskStatus">
+                    <option value="To Do Task" >To Do Task</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Done">Done</option>
+                </select>
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Task Description</label>
