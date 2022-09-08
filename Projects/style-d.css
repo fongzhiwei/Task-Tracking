@@ -201,3 +201,21 @@ body{
         margin-top: 5vh;
     }
 }
+
+.modal-dialog{
+    
+    width: 1000px;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgb(100, 200, 300);
+
+}
+
+.modal-footer button{
+    width: 210px;
+}
