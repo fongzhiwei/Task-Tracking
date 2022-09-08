@@ -26,7 +26,7 @@ const generateNewTask = (taskData) => `
         <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="type">${taskData.taskType}</span>
         <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span>
       </form>
-  </div>
+  </div> 
 
   <div class="card-footer">
     <button type="button" onclick="saveEdit()" class="btn btn-primary btn-default active">Save Changes</button>

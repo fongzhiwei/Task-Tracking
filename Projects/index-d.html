@@ -98,9 +98,6 @@
                 </div>
             </div><!-- Search End -->
 
-            <button type="button" class="btn btn-sm btn-primary ml-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fas fa-plus me-2"></i>Add Task</button>
-
             <div class="title">
                 <h1>Task Board</h1>
             
@@ -114,18 +111,25 @@
                 
             </div>
 
+            <button type="button" class="btn btn-sm btn-primary ml-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fas fa-plus me-2"></i>Add Task</button>
+
             <div class="task_list"><!-- Task Lists -->
+                <div class="container">
+                    <section class="mt-4">
+                      <div class="row justify-content-center mt-4">
+                        <div class="col-md-6 col-lg-4 mt-3">
+                          <form class="d-flex"></form>
+                        </div>
+                      </div>
+                    </section>
+              
+                    <section class="mt-1">
+                      <div class="row task_creation">
+                    </section>
+                  </div>
 
-                <div class="task" data-status = "done" title="Done Task"><!-- Task 1 -->
-                    <div class="category"></div>
-                    <h2>UI Design</h2>
-                    <p>Done</p>
-
-                    <ul class="activity">
-                        <li>Low</li>
-                    </ul>
-                    </div>
-                </div> <!-- Task 1 End -->
+                
 
             </div><!-- Task Lists End -->
 
@@ -133,19 +137,7 @@
         </section><!-- Main End -->
 
     </div><!-- Dashboard End -->
-    <div class="container">
-        <section class="mt-4">
-          <div class="row justify-content-center mt-4">
-            <div class="col-md-6 col-lg-4 mt-3">
-              <form class="d-flex"></form>
-            </div>
-          </div>
-        </section>
-  
-        <section class="mt-1">
-          <div class="row task_creation">
-        </section>
-      </div>
+    
     
     <script src="dashboard.js"></script>
     <script src="index.js"></script>
