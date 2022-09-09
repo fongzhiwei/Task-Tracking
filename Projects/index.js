@@ -3,6 +3,7 @@ const taskCreation = document.querySelector(".task_creation");
 
 // new task template
 const generateNewTask = (taskData) => `
+<div class ="displayTaskSlot">
 <div class="col-md-6 col-lg-4 mt-3" >
   <div class="card shadow-sm task__card">
 
@@ -38,6 +39,7 @@ const generateNewTask = (taskData) => `
       <button type="button" onclick="saveEdit()" class="btn btn-primary btn-default active">Save Changes</button>
     </div>
   </div>
+</div>
 </div>
 `;
 
@@ -94,10 +96,10 @@ const deleteTask = (event) => {
 
   if (tagName == "BUTTON") {
     return taskCreation.removeChild(
-      event.target.parentNode.parentNode.parentNode
+      event.target.parentNode.parentNode.parentNode.parentNode
     );
   } else {
-    return taskCreation.removeChild(event.target.parentNode.parentNode.parentNode.parentNode);
+    return taskCreation.removeChild(event.target.parentNode.parentNode.parentNode.parentNode.parentNode);
   }
 };
 
