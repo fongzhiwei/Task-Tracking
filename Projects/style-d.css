@@ -1,0 +1,185 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif; 
+}
+
+body{
+    margin: 0px;
+    background-color: aliceblue;
+}
+
+.dashboard{
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+
+.dashboard .container-fluid{
+    margin-top: 30px;
+}
+
+
+.dashboard .container-fluid button {
+    float: right;
+}
+
+/* Navigation */
+.dashboard .navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.dashboard .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.dashboard .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+/* Search */
+.dashboard .main .search form {
+    position: relative;
+}
+
+.dashboard .main .search {
+    margin-top: 30px;
+}
+
+.dashboard .main .search form input {
+    width: 190%;
+    font-size: 16px;
+    padding: 10px 10px 10px 60px;
+    border: 1px solid #dadada;
+    background-color: rgba(0 0 0 / 0);
+}
+
+.dashboard .main .search form span {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    color: #727272;
+}
+
+.dashboard .main .search button {
+    width: 100px;
+    height: 35px;
+}
+
+/* Display Task UI */
+.task__card:hover {
+    border: 3px solid #000000;
+}
+
+.modal-dialog{
+    
+    width: 1000px;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgb(100, 200, 300);
+
+}
+
+.modal-footer button{
+    width: 210px;
+}
+
+.task__card__name text-white {
+    float: right;
+}
+
+.card-header button{
+    margin-right: 10px;
+}
+
+.text-white {
+    float: left;
+}
+
+.card-footer {
+    margin-top: 50px;
+    width: 380px;
+    padding: 10px 5px;
+}
+.card-footer button{
+    margin-left: 250px;
+}
+
+
+
+/* Tasks */
+.dashboard .main .title {
+    margin-bottom: 30px;
+}
+
+.dashboard .main .title h1 {
+    font-size: 35px;
+    line-height: 35px;
+}
+
+.dashboard .main .title {
+    margin-top: 40px;
+}
+
+.dashboard .main .title label{
+    margin-right: 15px;
+    color: #727272;
+    font-size: 16px;
+}
+
+.dashboard .main .title select {
+    border: none;
+    font-size: 16px;
+    background-color: rgb(0 0 0 / 0);
+}
+
+/* Media Query */
+@media only screen and (min-width: 768px) {
+    .dashboard .main .search {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: -10px;
+    }
+
+    .dashboard .main .search form{
+        margin-top: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .dashboard .navigation,
+    .dashboard .navigation div span {
+        display: block;
+    }
+    .dashboard .navigation {
+        width: 60px;
+        position: fixed;
+        z-index: 10px;
+    }
+
+    section.main {
+        margin-left: 90px;
+        margin-right: 20px;
+    }
+
+    .dashboard .navigation div {
+        margin-top: 19vh;
+        margin-bottom: 19vh;
+    }
+
+    .dashboard .navigation div span {
+        margin-top: 5vh;
+    }
+}
