@@ -4,6 +4,7 @@ const taskCreation = document.querySelector(".task_creation");
 // new task template
 const generateNewTask = (taskData) => `
 <div class="col-md-6 col-lg-4 mt-3" >
+<div class "card">
 <div class="card shadow-sm task__card">
 
   <div class="card-header d-flex justify-content-end task__card__header">
@@ -31,6 +32,7 @@ const generateNewTask = (taskData) => `
   <div class="card-footer">
     <button type="button" onclick="saveEdit()" class="btn btn-primary btn-default active">Save Changes</button>
   </div>
+</div>
 </div>
 </div>
 `;
