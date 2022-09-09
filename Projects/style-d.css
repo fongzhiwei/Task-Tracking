@@ -10,7 +10,16 @@ body{
 
 .dashboard{
     padding: 0px 15px;
-    margin: 0 auto;
+    margin: 0px auto;
+}
+
+.dashboard .container-fluid{
+    margin-top: 30px;
+}
+
+
+.dashboard .container-fluid button {
+    float: right;
 }
 
 /* Navigation */
@@ -43,7 +52,7 @@ body{
 }
 
 .dashboard .main .search form input {
-    width: 100%;
+    width: 190%;
     font-size: 16px;
     padding: 10px 10px 10px 60px;
     border: 1px solid #dadada;
@@ -57,24 +66,56 @@ body{
     color: #727272;
 }
 
-.dashboard .main .search .notification {
-    margin-top: 20px;
+.dashboard .main .search button {
+    width: 100px;
+    height: 35px;
 }
 
-.dashboard .main .search .notification span:nth-child(1) {
-    margin-right: 15px;
-    position: relative;
+/* Display Task UI */
+.task__card:hover {
+    border: 3px solid #000000;
 }
 
-.dashboard .main .search .notification span:nth-child(1)::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: red;
+.modal-dialog{
+    
+    width: 1000px;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
     position: absolute;
-    border-radius: 50%;
-    top: 5px;
+    top: 5%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgb(100, 200, 300);
+
 }
+
+.modal-footer button{
+    width: 210px;
+}
+
+.task__card__name text-white {
+    float: right;
+}
+
+.card-header button{
+    margin-right: 10px;
+}
+
+.text-white {
+    float: left;
+}
+
+.card-footer {
+    margin-top: 50px;
+    width: 380px;
+    padding: 10px 5px;
+}
+.card-footer button{
+    margin-left: 250px;
+}
+
+
 
 /* Tasks */
 .dashboard .main .title {
@@ -83,7 +124,7 @@ body{
 
 .dashboard .main .title h1 {
     font-size: 35px;
-    line-height: 0px;
+    line-height: 35px;
 }
 
 .dashboard .main .title {
@@ -102,78 +143,19 @@ body{
     background-color: rgb(0 0 0 / 0);
 }
 
-/* Task List */
-.dashboard .main .task_list .task h2 {
-    font-size: 20px;
-    line-height: 0;
-}
-
-.dashboard .main .task_list .task p {
-    color: #727272;
-}
-
-.dashboard .main .task_list .task ul {
-    list-style: none;
-    position: relative;
-    margin-left: 0px;
-    padding-left: 0px;
-}
-
-.dashboard .main .task_list .task ul li {
-    position: relative;
-    width: 50px;
-    height: 30px;
-    border-radius: 10px;
-    border: 3px solid green;
-    color: #1e7b3e;
-    text-align: center;
-}
-
-.dashboard .main .task_list .task {
-    padding: 20px 20px 20px 60px;
-    background-color: #fff;
-    box-shadow: 1px 1px 40px rgba(0 0 0 / .01);
-    margin-bottom: 20px;
-    border-radius: 10px;
-    position: relative;
-}
-
-.dashboard .main .task_list .category {
-    width: 30px;
-    height: 50px;
-    background-color: rebeccapurple;
-    border-radius: 0px 10px 10px 0px;
-    position: absolute;
-    left: 0%;
-}
-
-
 /* Media Query */
 @media only screen and (min-width: 768px) {
     .dashboard .main .search {
         display: flex;
         justify-content: space-between;
-        margin-top: 70px;
-        margin-bottom: 50px;
+        margin-top: 30px;
+        margin-bottom: -10px;
     }
 
     .dashboard .main .search form{
         margin-top: 10px;
     }
 
-    section.main .task_list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    section.main .task_list .task {
-        width: 47%;
-    }
-
-    section.main .task_list .task span {
-        margin-top: 15px;
-    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -184,7 +166,7 @@ body{
     .dashboard .navigation {
         width: 60px;
         position: fixed;
-        z-index: 10;
+        z-index: 10px;
     }
 
     section.main {

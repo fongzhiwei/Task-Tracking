@@ -11,72 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-d.css">
 
 </head>
 <body onload="loadTaskData()">
-<!-- Create Task -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <!-- Information of the task -->
-        <div class="modal-body">
-            <form>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Task Name</label>
-                <input type="email" class="form-control" id="taskName" aria-describedby="emailHelp" placeholder="Login Information Update"/>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="taskPriorityInput">Task Type</label> <br>
-                <select name="taskTypeInput" id="taskType">
-                    <option value="User Story">User Story</option>
-                    <option value="Bugs">Bugs</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="storyPointInput">Story Points</label> <br>
-                <input type="number" min = "1" class="form-control" id="storyPoint">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="taskPriorityInput">Task Priority</label> <br>
-                <select name="taskPriorityInput" id="taskPriority">
-                    <option value="Low">Low</option>
-                    <option value="Normal">Normal</option>
-                    <option value="High">High</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="taskStatus">Task Status</label> <br>
-                <select name="taskStatus" id="taskStatus">
-                    <option value="To Do Task" >To Do Task</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Done">Done</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Task Description</label>
-                <textarea type="email" class="form-control" id="taskDesc" aria-describedby="emailHelp" placeholder="Description on the task" rows = 4></textarea>
-            </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button data-bs-dismiss="modal" onclick = "saveChanges()" type="button" class="btn btn-primary btn-default active">Confirm</button>
-        </div>
-        </div>
-    </div>
-    </div>
-
     <div class = "dashboard"><!-- Dashboard -->
+        <div class="container-fluid">
+            <button type="button" class="btn btn-sm btn-primary ml-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fas fa-plus me-2"></i>Add Task</button>
+        </div>
         <section class = "navigation"><!-- Navigation -->
-            <img src="image/attachment_93970207.png" alt="Web Logo" class="logo">
-
+            <a href="#"><img src="image/logo.png" alt="Web Logo" class = "logo"></a>
             <div>
                 <span class="material-symbols-outlined">dashboard</span>
                 <span class="material-symbols-outlined">timeline</span>
@@ -90,12 +35,9 @@
         <section class = "main"><!-- Main -->
             <div class = "search"><!-- Search -->
                 <form action="">
-                    <input type="text" name="search" id="searchTask" placeholder="Search Here">
+                    <input type="text" name="search" id="searchTask" placeholder="Search Here" onkeyup="searchFunction()">
                     <span class="material-symbols-outlined">search</span>
                 </form> 
-                <div class="notification">
-                    <span class="material-symbols-outlined">notifications</span>
-                </div>
             </div><!-- Search End -->
 
             <div class="title">
@@ -110,9 +52,135 @@
                 </select>
                 
             </div>
+            
+            <!-- Create Task -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
 
-            <button type="button" class="btn btn-sm btn-primary ml-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fas fa-plus me-2"></i>Add Task</button>
+                    <!-- Information of the task -->
+                    <div class="modal-body">
+                        <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Task Name</label>
+                            <input type="email" class="form-control" id="taskName" aria-describedby="emailHelp" placeholder="Login Information Update"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="taskPriorityInput">Task Type</label> <br>
+                            <select name="taskTypeInput" id="taskType">
+                                <option value="User Story">User Story</option>
+                                <option value="Bugs">Bugs</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="storyPointInput">Story Points</label> <br>
+                            <input type="number" min = "1" class="form-control" id="storyPoint">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="taskPriorityInput">Task Priority</label> <br>
+                            <select name="taskPriorityInput" id="taskPriority">
+                                <option value="Low">Low</option>
+                                <option value="Normal">Normal</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="taskStatus">Task Status</label> <br>
+                            <select name="taskStatus" id="taskStatus">
+                                <option value="To Do Task" >To Do Task</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Done">Done</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="addMember">Member 1</label> <br>
+                            <select name="addMember" id="addMember">
+                                <option value=""> </option>
+                                <option value="Alex Li"> Alex Li</option>
+                                <option value="Anson Wong">Anson Wong</option>
+                                <option value="Shiau Yen">Shiau Yen</option>
+                                <option value="Yu Mei">Yu Mei</option>
+                                <option value="Zhi Wei">Zhi Wei</option>
+                                <option value="-">-</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="addMember2">Member 2</label> <br>
+                        <select name="addMember2" id="addMember2">
+                            <option value=""> </option>
+                            <option value="Alex Li" > Alex Li</option>
+                            <option value="Anson Wong">Anson Wong</option>
+                            <option value="Shiau Yen">Shiau Yen</option>
+                            <option value="Yu Mei">Yu Mei</option>
+                            <option value="Zhi Wei">Zhi Wei</option>
+                            <option value="-">-</option>
+                        </select>
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="addMember3">Member 3</label> <br>
+                        <select name="addMember3" id="addMember3">
+                            <option value=""> </option>
+                            <option value="Alex Li" > Alex Li</option>
+                            <option value="Anson Wong">Anson Wong</option>
+                            <option value="Shiau Yen">Shiau Yen</option>
+                            <option value="Yu Mei">Yu Mei</option>
+                            <option value="Zhi Wei">Zhi Wei</option>
+                            <option value="-">-</option>
+                        </select>
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="addMember4">Member4</label> <br>
+                        <select name="addMember4" id="addMember4">
+                            <option value=""> </option>
+                            <option value="Alex Li" > Alex Li</option>
+                            <option value="Anson Wong">Anson Wong</option>
+                            <option value="Shiau Yen">Shiau Yen</option>
+                            <option value="Yu Mei">Yu Mei</option>
+                            <option value="Zhi Wei">Zhi Wei</option>
+                            <option value="-">-</option>
+                        </select>
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="addMember5">Member 5</label> <br>
+                        <select name="addMember5" id="addMember5">
+                            <option value=""> </option>
+                            <option value="Alex Li" > Alex Li</option>
+                            <option value="Anson Wong">Anson Wong</option>
+                            <option value="Shiau Yen">Shiau Yen</option>
+                            <option value="Yu Mei">Yu Mei</option>
+                            <option value="Zhi Wei">Zhi Wei</option>
+                            <option value="-">-</option>
+                        </select>
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="addMember6">Member 6</label> <br>
+                        <select name="addMember6" id="addMember6">
+                            <option value=""> </option>
+                            <option value="Alex Li" > Alex Li</option>
+                            <option value="Anson Wong">Anson Wong</option>
+                            <option value="Shiau Yen">Shiau Yen</option>
+                            <option value="Yu Mei">Yu Mei</option>
+                            <option value="Zhi Wei">Zhi Wei</option>
+                            <option value="-">-</option>
+                        </select>
+                        </div>            
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Task Description</label>
+                            <textarea type="email" class="form-control" id="taskDesc" aria-describedby="emailHelp" placeholder="Description on the task" rows = 4></textarea>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button data-bs-dismiss="modal" onclick = "saveChanges()" type="button" class="btn btn-primary btn-default active">Confirm</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="task_list"><!-- Task Lists -->
                 <div class="container">
