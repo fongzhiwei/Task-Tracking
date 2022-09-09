@@ -4,7 +4,7 @@ function searchFunction() {
   input = document.getElementById("searchTask");
   filter = input.value.toUpperCase();
   cards = document.getElementsByClassName("card")
-  titles = document.getElementsByClassName("task_card_name");
+  titles = document.getElementsByClassName("task__card__name");
 
   // Loop through all list items, and hide those tasks that don't match the search query
   for (i = 0; i < cards.length; i++) {
