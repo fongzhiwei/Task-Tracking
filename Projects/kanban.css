@@ -1,8 +1,10 @@
+/* Set up the colour of the whole page */
 body {
     margin: 0px;
     background-color: aliceblue;
 }
 
+/* Set up the style of the column */
 .kanban {
     display: flex;
     padding: 30px;
@@ -11,18 +13,22 @@ body {
     border-radius: 5px;
 }
 
+/* Font of kanban */
 .kanban * {
     font-family: 'Mukta', sans-serif;
 }
 
+/* To make sure every column is having an equal width */
 .kanban_column {
     flex: 1;
 }
 
+/* As long as the column is not the last one then it will have a right margin */
 .kanban_column:not(:last-child) {
     margin-right: 30px;
 }
 
+/* Style of the title */
 .kanban_title {
     margin-bottom: 20px;
     font-size: 30px;
@@ -30,6 +36,7 @@ body {
     user-select: none;
 }
 
+/* Style input of user */
 .kanban_input {
     padding: 10px 15px;
     box-sizing: border-box;
@@ -38,16 +45,20 @@ body {
     cursor: pointer;
 }
 
+/* Drag and drop funciton set up */
 .kanban_drag {
     height: 10px;
     transition: backgroud 0.15s, height 0.15s;
 }
 
+/* Colour changing while drag and drop */
 .kanban_drag--active {
     height: 20px;
     background: rgba(0, 0, 0, 0.25);
 }
 
+
+/* Style of button "Add" */
 .add_item {
     width: 100%;
     padding: 10px 0;
