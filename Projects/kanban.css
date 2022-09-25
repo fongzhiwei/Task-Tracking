@@ -1,8 +1,13 @@
+body {
+    margin: 0px;
+    background-color: aliceblue;
+}
+
 .kanban {
     display: flex;
     padding: 30px;
     width: 750px;
-    background: blanchedalmond;
+    background: rgb(215, 234, 250);
     border-radius: 5px;
 }
 
