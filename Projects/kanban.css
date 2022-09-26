@@ -51,7 +51,7 @@ body {
     transition: backgroud 0.15s, height 0.15s;
 }
 
-/* Colour changing while drag and drop */
+/* Colour changing while drag and drop (currently set under inspect code) */
 .kanban_drag--active {
     height: 20px;
     background: rgba(0, 0, 0, 0.25);

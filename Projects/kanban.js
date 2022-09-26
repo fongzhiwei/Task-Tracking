@@ -1,9 +1,15 @@
-export default class kanban {
-    constructor(data) {
+import Column from "./column.js";
+
+export default class Kanban {
+    constructor(data) 
+    {
         this.data = data;
-        kanban.columns().forEach(column => 
+        Kanban.columns().forEach(column => 
             {
-                // to be continue (database needed)
+                // instance of column class
+                const columnView = new Column(column.id, column.title);
+
+                this.data.appendChild(columnView.elements.data)
             });
         
     }
