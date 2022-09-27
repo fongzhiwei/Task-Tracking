@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-body{
-    margin: 0px;
-    background-color: aliceblue;
-}
-
-#board #container{
-    background-color: aqua;
-}
-
-#board #container button{
-    float: right;
-}
-
-
-
-.navigation .logo{
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: 30px;
-}
-
-=======
 *{
     font-family: 'Mukta', sans-serif; 
 }
@@ -93,4 +68,3 @@ body {
 #container {
     position: absolute;
 }
->>>>>>> origin/Shiau-Yen
