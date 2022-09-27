@@ -20,13 +20,11 @@ const generateNewTask = (taskData) => `
       <div class="card-body">
         <h2 class="task__card__name" id="name">${taskData.taskName}
         </h2>
-          <p class="description trim-3-lines text-muted" id="desc" >${taskData.taskDesc}</p>
           <form>
-            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="priority">${taskData.taskPriority}</span></div>
+            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" style="background-color: red"; id="priority">${taskData.taskPriority}</span></div>
             <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="story">${taskData.storyPoint}</span></div>
             <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="type">${taskData.taskType}</span>
-            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span></div>
-            <div class="tags text-white flex-wrap"><span class="badge bg-warning m-1" id="member">${taskData.addMember}</span>
+            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span>
           </form>
       </div>
 
