@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanban</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="kanban.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kanban Board</title>
+	<link rel="stylesheet" href="kanban.css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    <div class="kanban"></div>
-    <script src="./mainKanban.js" type="module"></script>
+	<div class="board">
+		<section class = "navigation">
+			<a href="index-d.html"><img src="image/logo.png" alt="Web Logo" class = "logo"></a>
+			<div>
+				<span class="material-symbols-outlined">home</span>
+			</div>
+		</section>
+
+		<section class="main">
+			<div class="title">
+				<h1>Kanban Board</h1>
+			</div>
+		</section>
+
+		<section class="kanban"></section>
+	</div>
+	<script src="kanbanMain.js" type="module"></script>
 </body>
 </html>

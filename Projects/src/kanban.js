@@ -1,35 +1,30 @@
-import Column from "./column.js";
+import Column from "./Column.js";
 
 export default class Kanban {
-    constructor(data) 
-    {
-        this.data = data;
-        Kanban.columns().forEach(column => 
-            {
-                // instance of column class
-                const columnView = new Column(column.id, column.title);
+	constructor(root) {
+		this.root = root;
 
-                this.data.appendChild(columnView.elements.data)
-            });
-        
-    }
+		Kanban.columns().forEach(column => {
+			const columnView = new Column(column.id, column.title);
 
-    // return title of every columns 
-    static columns()
-    {
-        return [
-            {
-                id: 1,
-                title: "To Do"
-            },
-            {
-                id: 2,
-                title: "In Progress"
-            },
-            {
-                id: 3,
-                title: "Done"
-            }
-        ];
-    }
+			this.root.appendChild(columnView.elements.root);
+		});
+	}
+
+	static columns() {
+		return [
+			{
+				id: 1,
+				title: "Not Started"
+			},
+			{
+				id: 2,
+				title: "In Progress"
+			},
+			{
+				id: 3,
+				title: "Completed"
+			}
+		];
+	}
 }
