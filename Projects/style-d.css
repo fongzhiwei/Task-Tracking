@@ -94,10 +94,6 @@ body{
     width: 210px;
 }
 
-.task__card__name text-white {
-    float: right;
-}
-
 .card-header button{
     margin-right: 10px;
 }
@@ -111,7 +107,7 @@ body{
     width: 380px;
     padding: 10px 5px;
 }
-.card-footer button{
+.card-footer button {
     margin-left: 250px;
 }
 
