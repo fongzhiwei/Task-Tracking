@@ -1,45 +1,49 @@
-import Task from "./task";
+import KanbanAPI from "../api/KanbanAPI.js";
+import DropZone from "./DropZone.js";
+import Item from "./Item.js";
 
 export default class Column {
-    constructor(id, title)
-    {
-        this.elements = {};
-        this.elements.data = Column.createData();
-        this.elements.title = this.elements.data.querySelector(".kanban_column-title");
-        this.elements.items = this.elements.data.querySelector(".kanban_column-items");
-        this.elements.addItem = this.elements.data.querySelector(".kanban_add-item");
-    
-        this.elements.data.dataset.id = id;
-        this.elements.title.textContent = title;
+	constructor(id, title) {
+		const topDropZone = DropZone.createDropZone();
 
-        this.elements.addItem.addEventListener("click", () => {
+		this.elements = {};
+		this.elements.root = Column.createRoot();
+		this.elements.title = this.elements.root.querySelector(".kanban__column-title");
+		this.elements.items = this.elements.root.querySelector(".kanban__column-items");
+		this.elements.addItem = this.elements.root.querySelector(".kanban__add-item");
 
-        });
+		this.elements.root.dataset.id = id;
+		this.elements.title.textContent = title;
+		this.elements.items.appendChild(topDropZone);
 
-        // i need database support to get the item (shiau yen)
-    }
+		this.elements.addItem.addEventListener("click", () => {
+			const newItem = KanbanAPI.insertItem(id, "");
 
-    // to create html
-    static createData() {
-        const range = document.createRange();
+			this.renderItem(newItem);
+		});
 
-        range.selectNode(document.body);
+		KanbanAPI.getItems(id).forEach(item => {
+			this.renderItem(item);
+		});
+	}
 
-        return range.createContextualFragment(`
-            <div class="kanban_column">
-                <div class="kanban_column-title"></div>
-                <div class="kanban_column-items"></div>
-                <button class="kanban_add-item">Add +</button>
-            </div>
-        `).children[0];
-    }
+	static createRoot() {
+		const range = document.createRange();
 
-    // this will work only after implementing the database
-    renderItem(task)
-    {
-        // instance of create task
-        const item = new Task(task.id, task.content);
+		range.selectNode(document.body);
 
-        this.elements.items.appendChild(item.elements.data)
-    }
+		return range.createContextualFragment(`
+			<div class="kanban__column">
+				<div class="kanban__column-title"></div>
+				<div class="kanban__column-items"></div>
+				<button class="kanban__add-item" type="button">Add Task +</button>
+			</div>
+		`).children[0];
+	}
+
+	renderItem(data) {
+		const item = new Item(data.id, data.content);
+
+		this.elements.items.appendChild(item.elements.root);
+	}
 }

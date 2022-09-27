@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     margin: 0px;
     background-color: aliceblue;
@@ -21,3 +22,75 @@ body{
     margin-left: 30px;
 }
 
+=======
+*{
+    font-family: 'Mukta', sans-serif; 
+}
+
+body {
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+/* navigation bar styling */
+.board .navigation {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: -5px;
+}
+
+.board .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+}
+
+.board .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+/* style of title */
+.board .main .title {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.board .main .title .container button {
+    float: right;
+    margin-top: -65px;
+    margin-right: -350px;
+}
+
+.board .main .title h1 {
+    font-size: 30px;
+    line-height: 35px;
+	margin-left: 100px;
+}
+
+.board .navigation, .dashboard .navigation div span {
+        display: block;
+    }
+
+.board .navigation {
+        width: 30px;
+        position: fixed;
+        z-index: 10px;
+    }
+
+.board .navigation div {
+        margin-top: 30vh;
+        margin-bottom: 10vh;
+    }
+
+.board .navigation div span {
+        margin-top: 5vh;
+    }
+
+#container {
+    position: absolute;
+}
+>>>>>>> origin/Shiau-Yen
