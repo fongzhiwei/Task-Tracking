@@ -90,25 +90,13 @@ body{
 
 }
 
-.modal-footer button{
-    width: 210px;
-}
-
-.card-header button{
-    margin-right: 10px;
-}
-
 .text-white {
     float: left;
 }
 
-.card-footer {
-    margin-top: 50px;
-    width: 380px;
-    padding: 10px 5px;
-}
-.card-footer button {
-    margin-left: 250px;
+.displayTaskSlot {
+    margin-left: -50px;
+    margin-right: -830px;
 }
 
 
