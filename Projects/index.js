@@ -4,37 +4,31 @@ const taskCreation = document.querySelector(".task_creation");
 // new task template
 const generateNewTask = (taskData) => `
 <div class ="displayTaskSlot">
-<div class="col-md-6 col-lg-4 mt-3" >
-  <div class="card shadow-sm task__card">
+  <div class="col-md-6 col-lg-4 mt-3" >
+    <div class="card shadow-sm task__card">
 
-    <div class="card-header d-flex justify-content-end task__card__header">
-      <button type="button" class="btn btn-outline-info mr-2" onclick ="editTask()">
-        <i class="fas fa-pencil-alt" onlick ="editTask()"></i>
-      </button>
+      <div class="card-header d-flex justify-content-end task__card__header">
+        <button type="button" class="btn btn-outline-danger" id=${taskData.id} onclick="deleteTask.apply(this, arguments)" data-bs-toggle="modal">
+          <i class="fas fa-trash-alt"id=${taskData.id} data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)"></i>
+        </button>
 
-      <button type="button" class="btn btn-outline-danger" id=${taskData.id} onclick="deleteTask.apply(this, arguments)" data-bs-toggle="modal">
-        <i class="fas fa-trash-alt"id=${taskData.id} data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)"></i>
-      </button>
-    </div>
+      </div>
 
-    <div class="card-body">
-      <h2 class="task__card__name" id="name">${taskData.taskName}
-      </h2>
-        <p class="description trim-3-lines text-muted" id="desc" >${taskData.taskDesc}</p>
-        <form>
-          <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="priority">${taskData.taskPriority}</span></div>
-          <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="story">${taskData.storyPoint}</span></div>
-          <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="type">${taskData.taskType}</span>
-          <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span></div>
-          <div class="tags text-white flex-wrap"><span class="badge bg-warning m-1" id="member">${taskData.addMember}</span>
-        </form>
-    </div>
+      <div class="card-body">
+        <h2 class="task__card__name" id="name">${taskData.taskName}
+        </h2>
+          <form>
+            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" style="background-color: red"; id="priority">${taskData.taskPriority}</span>
+            <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="story">${taskData.storyPoint}</span></div>
+          </form>
 
-    <div class="card-footer">
-      <button type="button" onclick="saveEdit()" class="btn btn-primary btn-default active">Save Changes</button>
+          <form>
+            <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="type">${taskData.taskType}</span></div>
+            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span>
+          </form>
+      </div>
     </div>
   </div>
-</div>
 </div>
 `;
 
