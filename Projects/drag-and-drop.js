@@ -84,10 +84,12 @@ const todo_submit = document.getElementById("todo_submit");
 
 todo_submit.addEventListener("click", createTodo);
 
-function createTodo() {
+function createTodo(task) {
   const todo_div = document.createElement("div");
-  const input_val = document.getElementById("todo_input").value;
-  const txt = document.createTextNode(input_val);
+  const txt = document.createTextNode(task)
+//   const input_val = document.getElementById("todo_input").value;
+//   const txt = document.createTextNode(input_val);
+
 
   todo_div.appendChild(txt);
   todo_div.classList.add("todo");
@@ -133,8 +135,13 @@ const loadTaskData = () => {
     const {task} = JSON.parse(getTaskData);
   
     task.map((taskObject) => {
-      taskCreation.insertAdjacentHTML("beforeend", generateNewTask(taskObject));
+      createTodo(taskObject.taskName);
   
       globalStorage.push(taskObject);
     });
   };
+
+  const addToSprint = () => {
+    document.querySelectorAll('[id=add_to_sprint]')
+    
+  }
