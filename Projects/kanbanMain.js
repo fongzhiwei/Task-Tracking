@@ -35,5 +35,16 @@ function createTodo(task) {
 	overlay.classList.remove("active");
   }
 
+  const loadTaskData = () => {
+    const getTaskData = localStorage.getItem("task");
+    const {task} = JSON.parse(getTaskData);
+  
+    task.map((taskObject) => {
+      createTodo(taskObject.taskName);
+  
+      globalStorage.push(taskObject);
+    });
+  };
+
 
   
