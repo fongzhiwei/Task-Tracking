@@ -14,7 +14,8 @@ const generateNewCard = (sprint) => `<div class = "card">
         <div><button type="button" id="finish" onclick="" > Finished </button> </div>
          </div>
         </div>
-        <div id="date" class="dateClass"><p id="date1">${sprint.startDate}</p> </div>
+        <div id="date" class="dateClass"><p id="date1">Start Date: ${sprint.startDate}</p> </div>
+        <div id="date2" class="dateClass"><p id="date3">End Date: ${sprint.endDate}</p> </div>
     </div>
 </div>`
 
@@ -46,6 +47,7 @@ const saveChanges = () => {
     id1 : Date.now()+"1",
     sprintTitle: document.getElementById("sprintTitle").value, 
     startDate: document.getElementById("startDate").value,
+    endDate: document.getElementById("endDate").value,
   };
   sprintCreation.insertAdjacentHTML("beforeend", generateNewCard(taskData));
   localStorage.setItem(taskData.id1, "Get Started");
