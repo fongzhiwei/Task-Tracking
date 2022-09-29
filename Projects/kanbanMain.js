@@ -13,7 +13,6 @@ function createTodo(task) {
   
 	todo_div.appendChild(txt);
 	todo_div.classList.add("todo");
-	todo_div.setAttribute("draggable", "true");
   
 	/* create span */
 	const span = document.createElement("span");
@@ -30,13 +29,11 @@ function createTodo(task) {
 	});
 	//   console.log(todo_div);
   
-	todo_div.addEventListener("dragstart", dragStart);
-	todo_div.addEventListener("dragend", dragEnd);
   
 	document.getElementById("todo_input").value = "";
 	todo_form.classList.remove("active");
 	overlay.classList.remove("active");
   }
 
-  
+
   
