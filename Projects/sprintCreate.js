@@ -88,3 +88,10 @@ const statusButton = (event)=>{
    button1.innerText = localStorage.getItem(statusId);
 
 }
+
+function finishFunc(){
+  var ctnBtn = document.getElementById("btn1")
+  ctnBtn.remove();
+  var finishBtn = document.getElementById("finish")
+  finishBtn.remove();
+}
