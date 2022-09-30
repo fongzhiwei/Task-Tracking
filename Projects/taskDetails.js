@@ -35,19 +35,19 @@ const loadTaskDetail = () => {
 
 
 const saveEdits = () => {
- editName = document.getElementById("taskName").value;
- editType = document.getElementById("taskType").value;
- editPriority = document.getElementById("taskPriority").value
- editMember = document.getElementById("addMember").value
- editDesc = document.getElementById("taskDesc").value
- editStat = document.getElementById("taskStatus").value
- editStory = document.getElementById("storyPoint").value
+    editName = document.getElementById("taskName").value;
+    editType = document.getElementById("taskType").value;
+    editPriority = document.getElementById("taskPriority").value
+    editMember = document.getElementById("addMember").value
+    editDesc = document.getElementById("taskDesc").value
+    editStat = document.getElementById("taskStatus").value
+    editStory = document.getElementById("storyPoint").value
 
- document.getElementById("name") = editName;
- document.getElementById("type") = editType;
- document.getElementById("story") = editStory;
- document.getElementById("priority") = editPriority;
- document.getElementById("status") = editStat;
- document.getElementById("member") = editMember;
- document.getElementById("description") = editDesc;
+    document.getElementById("name") = editName;
+    document.getElementById("type") = editType;
+    document.getElementById("story") = editStory;
+    document.getElementById("priority") = editPriority;
+    document.getElementById("status") = editStat;
+    document.getElementById("member") = editMember;
+    document.getElementById("description") = editDesc;
 };
