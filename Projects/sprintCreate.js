@@ -4,22 +4,22 @@ const sprintCreation = document.querySelector(".display");
 const generateNewCard = (sprint) => `
 <div class = "card" id=${sprint.id} onclick ="buttonPressed()">
   <div id="upperLine">
-    <h5 id="taskName"><b> ${sprint.sprintTitle} </b></h5>
+      <h5 id="taskName"><b> ${sprint.sprintTitle} </b></h5>
 
-    <div class = "date">
-      <p id="date1">Start Date: ${sprint.startDate}</p>
-      <p id="date3">End Date: ${sprint.endDate}</p>
-    </div>
-    
-    <div id="statusButtons"> 
-      <button type="button" class="btn btn-outline-danger" id=${sprint.id} class="asa" onclick="deleteTask.apply(this, arguments)" data-bs-target="#animateModal" data-bs-toggle="modal" >
-        <i class="fas fa-trash-alt"id=${sprint.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)" ></i>
-      </button>
+      <div class = "date">
+        <p id="date1">Start Date: ${sprint.startDate}</p>
+        <p id="date3">End Date: ${sprint.endDate}</p>
+      </div>
+      
+      <div id="statusButtons"> 
+        <button type="button" class="btn btn-outline-danger" id=${sprint.id} class="asa" onclick="deleteTask.apply(this, arguments)" data-bs-target="#animateModal" data-bs-toggle="modal" >
+          <i class="fas fa-trash-alt"id=${sprint.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)" ></i>
+        </button>
 
-      <div id = "btn1"><button id=${sprint.id1} class = "started" onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
-      <div><button class = "finished" type="button" id="finish" onclick="finishFunc()"> Finished </button></div>
+        <div id = "btn1"><button id=${sprint.id1} class = "started" onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
+        <div><button class = "finished" type="button" id="finish" onclick="finishFunc()"> Finished </button></div>
+      </div>
     </div>
-  </div> 
 </div>`
 ;
 
