@@ -32,3 +32,13 @@ const loadTaskDetail = () => {
     });
 
 };
+
+const editTask = () =>{
+    document.getElementById("name").contentEditable = "true";
+    document.getElementById("type").contentEditable = "true";
+    document.getElementById("story").contentEditable = "true";
+    document.getElementById("priority").contentEditable = "true";
+    document.getElementById("status").contentEditable = "true";
+    document.getElementById("member").contentEditable= "true";
+    document.getElementById("description").contentEditable = "true";
+}
