@@ -4,6 +4,9 @@ const openTaskModal=()=>{
     loadTaskDetail();
 };
 
+// declaring an empty array to store data
+let globalStorage = [];
+
 // get task data from local storage
 const loadTaskDetail = () => {
     const taskID = localStorage.getItem("taskDetail")
@@ -11,8 +14,8 @@ const loadTaskDetail = () => {
     const {task} = JSON.parse(getTaskData);
 
     task.map((taskObject) => {
+        globalStorage.push(taskObject)
         if(taskObject.id == taskID){
-            console.log(taskObject)
     
             const name = document.getElementById("name");
             name.innerText = taskObject.taskName
@@ -42,7 +45,7 @@ const editTask = () =>{
     document.getElementById("member").contentEditable= "true";
     document.getElementById("description").contentEditable = "true";
 }
-d
+
 const saveEdits = () => {
     changeName = document.getElementById("name").textContent;
     changeType = document.getElementById("type").textContent;
@@ -52,13 +55,20 @@ const saveEdits = () => {
     changeMember = document.getElementById("member").textContent;
     changeDesc = document.getElementById("description").textContent;
 
-    document.getElementById("name").innerHTML = changeName;
-    document.getElementById("type").innerHTML = changeType;
-    document.getElementById("story").innerHTML = changeStory;
-    document.getElementById("priority").innerHTML = changePriority;
-    document.getElementById("status").innerHTML = changeStat;
-    document.getElementById("member").innerHTML = changeMember;
-    document.getElementById("description").innerHTML = changeDesc;
+    globalStorage.forEach(function (taskItem){
+        const taskID = localStorage.getItem("taskDetail")
+        if (taskItem.id == taskID){
+          taskItem.taskName = changeName;
+          taskItem.taskType = changeType;
+          taskItem.storyPoint = changeStory;
+          taskItem.taskPriority = changePriority;
+          taskItem.taskStatus = changeStat;
+          taskItem.addMember = changeMember;
+          taskItem.taskDesc = changeDesc;
+        }
+      })
+
+    localStorage.setItem("task", JSON.stringify({task: globalStorage}));
 
     document.getElementById("name").contentEditable = "false";
     document.getElementById("type").contentEditable = "false";
