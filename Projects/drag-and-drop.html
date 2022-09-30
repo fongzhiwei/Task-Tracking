@@ -7,22 +7,10 @@
     <title>Add task into sprint</title>
   </head>
   <body onload="loadTaskData()">
-    <!-- modal -->
-    <div class="modal" id="todo_form">
-      <div class="header">
-        <div class="title">Add Todo</div>
-        <button class="btn close-modal">&times;</button>
-      </div>
-      <div class="body">
-        <input type="text" id="todo_input" />
-        <input type="submit" value="Add Todo" id="todo_submit" />
-      </div>
-    </div>
     <!-- todo -->
     <div class="todo-container">
       <div class="status" id="no_status">
         <h1>Task Backlog</h1>
-        <button id="add_btn" data-target-modal="#todo_form">+ Add Todo</button>
       </div>
       <div class="status" id="add_to_sprint">
         <h1>Sprint Backlog</h1>
@@ -30,6 +18,11 @@
 
 
     <div id="overlay"></div>
+
+
+    <button type="button"  class="btn btn-primary btn-default active">Bac</button>
+    <button type="button" onclick="addToSprint()" class="btn btn-primary btn-default active">Save Changes</button>
+    
 
     <script src="drag-and-drop.js"></script>
   </body>

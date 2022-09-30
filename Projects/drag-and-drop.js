@@ -51,38 +51,8 @@ function dragDrop() {
   console.log("dropped");
 }
 
-/* modal */
-const btns = document.querySelectorAll("[data-target-modal]");
-const close_modals = document.querySelectorAll(".close-modal");
-const overlay = document.getElementById("overlay");
-
-btns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelector(btn.dataset.targetModal).classList.add("active");
-    overlay.classList.add("active");
-  });
-});
-
-close_modals.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const modal = btn.closest(".modal");
-    modal.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-});
-
-window.onclick = (event) => {
-  if (event.target == overlay) {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach((modal) => modal.classList.remove("active"));
-    overlay.classList.remove("active");
-  }
-};
 
 /* create todo  */
-const todo_submit = document.getElementById("todo_submit");
-
-todo_submit.addEventListener("click", createTodo);
 
 function createTodo(task) {
   const todo_div = document.createElement("div");
@@ -97,34 +67,19 @@ function createTodo(task) {
 
   /* create span */
   const span = document.createElement("span");
-  const span_txt = document.createTextNode("\u00D7");
-  span.classList.add("close");
-  span.appendChild(span_txt);
 
   todo_div.appendChild(span);
 
   no_status.appendChild(todo_div);
 
-  span.addEventListener("click", () => {
-    span.parentElement.style.display = "none";
-  });
+
   //   console.log(todo_div);
 
   todo_div.addEventListener("dragstart", dragStart);
   todo_div.addEventListener("dragend", dragEnd);
 
-  document.getElementById("todo_input").value = "";
-  todo_form.classList.remove("active");
-  overlay.classList.remove("active");
 }
 
-const close_btns = document.querySelectorAll(".close");
-
-close_btns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    btn.parentElement.style.display = "none";
-  });
-});
 
 // declaring an empty array to store data
 let globalStorage = [];
@@ -141,7 +96,22 @@ const loadTaskData = () => {
     });
   };
 
+  const updateTaskData = (taskAdded) => {
+
+    globalStorage.forEach(function (taskItem){
+      console.log(taskItem.taskName)
+      console.log(taskAdded.textContent)
+      if (taskItem.taskName == taskAdded.textContent){
+        taskItem.sprintStatus = "In Sprint";
+        console.log("added task into sprint")
+      }
+    })
+    localStorage.setItem("task", JSON.stringify({task: globalStorage}));
+  };
+
+
+
   const addToSprint = () => {
-    document.querySelectorAll('[id=add_to_sprint]')
-    
+    const toBeadded = document.querySelectorAll("#add_to_sprint > .todo")
+    toBeadded.forEach(updateTaskData)
   }
