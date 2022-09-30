@@ -42,3 +42,29 @@ const editTask = () =>{
     document.getElementById("member").contentEditable= "true";
     document.getElementById("description").contentEditable = "true";
 }
+d
+const saveEdits = () => {
+    changeName = document.getElementById("name").textContent;
+    changeType = document.getElementById("type").textContent;
+    changeStory = document.getElementById("story").textContent;
+    changePriority = document.getElementById("priority").textContent;
+    changeStat = document.getElementById("status").textContent;
+    changeMember = document.getElementById("member").textContent;
+    changeDesc = document.getElementById("description").textContent;
+
+    document.getElementById("name").innerHTML = changeName;
+    document.getElementById("type").innerHTML = changeType;
+    document.getElementById("story").innerHTML = changeStory;
+    document.getElementById("priority").innerHTML = changePriority;
+    document.getElementById("status").innerHTML = changeStat;
+    document.getElementById("member").innerHTML = changeMember;
+    document.getElementById("description").innerHTML = changeDesc;
+
+    document.getElementById("name").contentEditable = "false";
+    document.getElementById("type").contentEditable = "false";
+    document.getElementById("story").contentEditable = "false";
+    document.getElementById("priority").contentEditable = "false";
+    document.getElementById("status").contentEditable = "false";
+    document.getElementById("member").contentEditable= "false";
+    document.getElementById("description").contentEditable = "false";
+}
