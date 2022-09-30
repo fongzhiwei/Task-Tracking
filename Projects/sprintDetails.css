@@ -1,20 +1,105 @@
 body{
+    margin: 10px;
     background-color: aliceblue;
 }
 
-p{
+/* navigation bar styling */
+.board .navigation {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: -2px;
+}
+
+.board .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+}
+
+.board .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 10px;
     font-size: 30px;
+}
+
+/* style of title */
+.board .main .title {
+    margin-top: 30px;
+}
+
+.board .main .title h1 {
+    font-size: 30px;
+    line-height: 35px;
+	margin-left: 70px;
+}
+
+.board .navigation, .dashboard .navigation div span {
+        display: block;
+    }
+
+.board .navigation {
+        width: 30px;
+        position: fixed;
+        z-index: 10px;
+    }
+
+.board .navigation div {
+        margin-top: 30vh;
+        margin-bottom: 10vh;
+    }
+
+.board .navigation div span {
+        margin-top: 5vh;
+    }
+
+
+#pageContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+p{
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
 }
 
-div.modal-body{
+div.detailContainer{
     background-color:beige;
-    height: 500px;
+    width: fit-content;
+    height: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-top: -50px;
+    margin-left: 1180px;
 }
 
 div#sprintDiv, #startDate1, #endDate1{
+    margin-top: 15px;
     background-color: white;
-    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
+div.sprint-container{
+    display: flex;
+    flex-wrap:wrap;
+    width: 75%;
+    position: relative;
+    left: 5%;
+    margin-top: -120px;
+    margin-left: -15px;
+    
+}
+div.displayTaskSlot{
+    width: 500px;
+    margin-left: 1%;
+}
+
+
+
 
 
