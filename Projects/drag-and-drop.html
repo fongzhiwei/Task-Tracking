@@ -4,26 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="drag-and-drop.css" />
-    <title>Add task into sprint</title>
+    <title> Add task into sprint </title>
+
   </head>
-  <body onload="loadTaskData()">
-    <!-- todo -->
-    <div class="todo-container">
-      <div class="status" id="no_status">
-        <h1>Task Backlog</h1>
-      </div>
-      <div class="status" id="add_to_sprint">
-        <h1>Sprint Backlog</h1>
-      </div>
+    <body onload="loadTaskData()">
 
+      <!-- todo -->
+      <div class="todo-container">
+        <div class="status" id="no_status">
+          <h1>Task Backlog</h1>
+          <a href="SprintCreate.html"><button type="button" id = "button1" class="btn btn-primary btn-default active">Back</button></a>
+        </div>
 
-    <div id="overlay"></div>
+        <div class="status" id="add_to_sprint">
+          <h1> Sprint Backlog </h1>
+          <a href="sprintDetails.html"><button type="button" id = "button2" onclick="addToSprint()" class="btn btn-primary btn-default active">Save Changes</button></a>
+        </div>
 
+      <div id="overlay"></div>
 
-    <button type="button"  class="btn btn-primary btn-default active">Bac</button>
-    <button type="button" onclick="addToSprint()" class="btn btn-primary btn-default active">Save Changes</button>
-    
-
-    <script src="drag-and-drop.js"></script>
+      <script src="drag-and-drop.js"></script>
   </body>
 </html>
