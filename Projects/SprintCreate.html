@@ -16,7 +16,7 @@
 
     </head>
 
-    <body onload="loadTaskData()">
+    <body onload="loadSprintData()">
       <div class="board">
         <section class = "navigation">
           <a href="index-d.html"><img src="image/logo.png" alt="Web Logo" class = "logo"></a>
@@ -27,12 +27,10 @@
     
         <section class="main">
           <div class="title">
-            <h1>Sprint Board</h1>
+            <b><h1>Sprint Board</h1></b>
               <div class="container mt-3" id="container">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                  Create Sprint
-                </button>
-            </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Create Sprint</button>
+              </div>
           </div>
         </section>
       </div>
@@ -52,7 +50,7 @@
               <div class="modal-body">
                   <form>
                       <div class="mb-3 mt-3">
-                        <label for="sprintTitle" class="form-label">Sprint title</label>
+                        <label for="sprintTitle" class="form-label"> Sprint Title </label>
                         <input type="text" class="form-control" id="sprintTitle" name="sprintTitle">
                       </div>
                       <div class="mb-3">
@@ -63,12 +61,12 @@
                         <label for="endDate" class="form-label"> End Date </label>
                           <input class="form-control" type="date" name="endDate" id="endDate">
                       </div>
-                      <button data-bs-dismiss="modal" type="button" onclick = "saveChanges()" class="btn btn-primary">Submit</button>
                     </form>
               </div>
         
               <!-- Modal footer -->
               <div class="modal-footer">
+                <button data-bs-dismiss="modal" type="button" onclick = "saveChanges()" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
               </div>
         
@@ -77,9 +75,7 @@
         </div>
 
         <div id="wrapContainer" class="col">
-            <div class="display">
-
-            </div>
+            <div class="display"></div>
         </div>
 
         <script src="sprintCreate.js"></script>
