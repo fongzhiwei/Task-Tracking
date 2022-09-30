@@ -4,6 +4,9 @@ const openTaskModal=()=>{
     loadTaskDetail();
 };
 
+// declaring an empty array to store data
+let globalStorage = [];
+
 // get task data from local storage
 const loadTaskDetail = () => {
     const taskID = localStorage.getItem("taskDetail")
@@ -11,8 +14,8 @@ const loadTaskDetail = () => {
     const {task} = JSON.parse(getTaskData);
 
     task.map((taskObject) => {
+        globalStorage.push(taskObject)
         if(taskObject.id == taskID){
-            console.log(taskObject)
     
             const name = document.getElementById("name");
             name.innerText = taskObject.taskName
@@ -35,21 +38,28 @@ const loadTaskDetail = () => {
 
 
 const saveEdits = () => {
- const editName = document.getElementById("editTaskName").textContent;
- const editType = document.getElementById("editTaskType").textContent;
- const editPriority = document.getElementById("editTaskPriority").textContent;
- const editMember = document.getElementById("editAddMember").textContent;
- const editDesc = document.getElementById("editTaskDesc").textContent;
- const editStat = document.getElementById("editTaskStatus").textContent;
- const editStory = document.getElementById("editStoryPoint").textContent;
+    editName = document.getElementById("taskName").value;
+    editType = document.getElementById("taskType").value;
+    editPriority = document.getElementById("taskPriority").value
+    editMember = document.getElementById("addMember").value
+    editDesc = document.getElementById("taskDesc").value
+    editStat = document.getElementById("taskStatus").value
+    editStory = document.getElementById("storyPoint").value
 
- console.log(editName)
+    globalStorage.forEach(function(taskItem){
+        const taskID = localStorage.getItem("taskDetail");
+        if(taskItem.id == taskID){
+            taskItem.taskName = editName;
+            taskItem.taskType = editType;
+            taskItem.storyPoint = editStory;
+            taskItem.taskPriority = editPriority;
+            taskItem.taskStatus = editStat;
+            taskItem.addMember = editMember;
+            taskItem.taskDesc = editDesc;
+        }
+    })
 
- document.getElementById("taskName").value = editName;
- document.getElementById("taskType").value = editType;
- document.getElementById("storyPoint").value = editStory;
- document.getElementById("taskPriority").value = editPriority;
- document.getElementById("taskStatus").value = editStat;
- document.getElementById("addMember").value = editMember;
- document.getElementById("taskDesc").value = editDesc;
+    localStorage.setItem("task",  JSON.stringify({task: globalStorage}));
+
+    window.location.reload();
 };
