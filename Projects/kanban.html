@@ -5,10 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kanban Board</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="kanban.css">
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
-<body>
+<body onload="loadSprintTask()">
 	<div class="board">
 		<section class = "navigation">
 			<a href="index-d.html"><img src="image/logo.png" alt="Web Logo" class = "logo"></a>
@@ -25,6 +27,23 @@
 
 		<section class="kanban"></section>
 	</div>
+
+	    <!-- todo -->
+		<div class="todo-container">
+			<div class="column status" id="not-started">
+
+			</div>
+	
+			<div class="column status" id="in-progress">
+
+			</div>
+
+			<div class="column status" id="completed">
+
+			</div>
+		
+		  </div>
 	<script src="kanbanMain.js" type="module"></script>
+	<script src ="kanbanDisplay.js"></script>
 </body>
 </html>
