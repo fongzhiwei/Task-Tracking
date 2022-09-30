@@ -10,8 +10,8 @@ const generateNewCard = (sprint) => `<div class = "card">
         data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)" ></i>
       </button>
       <div id="statusButtons"> 
-        <div><button id=${sprint.id1} onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
-        <div><button type="button" id="finish" onclick="" > Finished </button> </div>
+        <div id = "btn1"><button id=${sprint.id1} onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
+        <div><button type="button" id="finish" onclick="finishFunc()" > Finished </button> </div>
          </div>
         </div>
         <div id="date" class="dateClass"><p id="date1">Start Date: ${sprint.startDate}</p> </div>
@@ -84,4 +84,9 @@ const statusButton = (event)=>{
    const button1 = document.getElementById(statusId);
    button1.innerText = localStorage.getItem(statusId);
 
+}
+
+function finishFunc(){
+  var ctnBtn = document.getElementById("btn1")
+  ctnBtn.remove();
 }
