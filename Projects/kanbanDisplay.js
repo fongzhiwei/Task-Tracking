@@ -33,10 +33,10 @@ function createSprint(task) {
 	if(task.taskStatus == "To Do Task"){
 		notStarted.insertAdjacentHTML("beforeend", generateNewSprint(task));
 	}
-	else if (taskObject.taskStatus == "In Progress"){
+	else if (task.taskStatus == "In Progress"){
 		inProgress.insertAdjacentHTML("beforeend", generateNewSprint(task));
 	}
-	else if (taskObject.taskStatus == "Done"){
+	else if (task.taskStatus == "Done"){
 		completed.insertAdjacentHTML("beforeend", generateNewSprint(task));
 
 	}
