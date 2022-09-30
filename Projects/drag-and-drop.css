@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    background-color: aliceblue;
   }
   
   body {
@@ -36,6 +37,7 @@
     margin: 0;
     width: 100%;
     padding: 0.5rem 1rem;
+    text-align: center;
   }
   
   #add_btn {
@@ -80,4 +82,19 @@
   .todo .close:hover {
     color: #343444;
   }
+
+.todo-container .status button {
+  margin-top: 497px;
+  width: 500px;
+  margin-left: -15px;
+  border-width: 0.01cm;
+}
+
+#button1 {
+  background-color: rgb(191, 191, 191);
+}
+
+#button2 {
+  background-color: rgb(247, 128, 128);
+}
   
