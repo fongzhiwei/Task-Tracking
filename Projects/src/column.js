@@ -4,7 +4,6 @@ export default class Column {
 		this.elements = {};
 		this.elements.root = Column.createRoot();
 		this.elements.title = this.elements.root.querySelector(".kanban__column-title");
-		this.elements.items = this.elements.root.querySelector(".kanban__column-items");
 
 		this.elements.root.dataset.id = id;
 		this.elements.title.textContent = title;
