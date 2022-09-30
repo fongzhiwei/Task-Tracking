@@ -21,7 +21,6 @@ const generateNewCard = (sprint) => `
     </div>
   </div> 
 </div>`
-
 ;
 
 // declaring an empty array to store data
@@ -80,13 +79,22 @@ const deleteTask = (event) => {
   }
 };
 
-const statusButton = (event)=>{
-   event = window.event;
-   const statusId = event.target.id;
-   localStorage.setItem(statusId, "Continue");
-   const button1 = document.getElementById(statusId);
-   button1.innerText = localStorage.getItem(statusId);
 
+const statusButton = (event)=>{
+  event = window.event;
+  const statusId = event.target.id;
+  var ctnFlag = localStorage.getItem(statusId).toString();
+  
+  if (ctnFlag === "Get Started"){
+    localStorage.setItem(statusId, "Continue");
+    const button1 = document.getElementById(statusId);
+    button1.innerText = localStorage.getItem(statusId);
+    location.href = "drag-and-drop.html";
+  }
+  else{
+    location.href = "sprintDetails.html";
+  }
+   
 }
 
 function finishFunc(){
