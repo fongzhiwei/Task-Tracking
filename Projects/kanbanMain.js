@@ -1,4 +1,3 @@
-import { nodeName } from "jquery";
 import Kanban from "./src/Kanban.js";
 
 new Kanban(
