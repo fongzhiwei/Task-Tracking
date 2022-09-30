@@ -1,0 +1,108 @@
+/* Set up the colour of the whole page */
+body {
+    margin: 10px;
+    background-color: aliceblue;
+    align-items: center;
+}
+
+/* navigation bar styling */
+.board .navigation {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: -5px;
+}
+
+.board .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+}
+
+.board .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+/* style of title */
+.board .main .title {
+    margin-bottom: 30px;
+}
+
+.board .main .title h1 {
+    font-size: 30px;
+    line-height: 35px;
+	margin-left: 70px;
+}
+
+.board .navigation, .dashboard .navigation div span {
+        display: block;
+    }
+
+.board .navigation {
+        width: 30px;
+        position: fixed;
+        z-index: 10px;
+    }
+
+.board .navigation div {
+        margin-top: 40vh;
+        margin-bottom: 10vh;
+    }
+
+.board .navigation div span {
+        margin-top: 5vh;
+    }
+
+/* Set up the style of the column */
+.board .kanban {
+    display: flex;
+    padding: 30px;
+    width: 1300px;
+    background: rgb(149, 201, 244);
+    border-radius: 5px;
+    margin-left: 75px;
+}
+
+.board .kanban * {
+    font-family: 'Mukta', sans-serif;
+}
+
+/* To make sure every column is having an equal width */
+.board .kanban__column {
+    flex: 1;
+}
+
+/* As long as the column is not the last one then it will have a right margin */
+.kanban__column:not(:last-child) {
+    margin-right: 30px;
+}
+
+/* Style of the title */
+.board .kanban__column-title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: black;
+    user-select: none;
+    text-align: center;
+}
+
+.todo-container {
+    width: 1310px;
+    height: 80vh;
+    display: flex;
+    margin-left: 80px;
+  }
+  
+.status {
+    width: 33%;
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+  }
+
+  .displayTaskSlot {
+    width: 1200px;
+  }
+  

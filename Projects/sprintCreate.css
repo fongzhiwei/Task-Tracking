@@ -1,0 +1,153 @@
+/* Styling for the whole board */
+
+*{
+    font-family: 'Mukta', sans-serif; 
+}
+
+body {
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+/* navigation bar styling */
+.board .navigation {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: -5px;
+}
+
+.board .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+}
+
+.board .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+/* style of title "Sprint Board */
+.board .main .title {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.board .main .title .container button {
+    float: right;
+    margin-top: -65px;
+    margin-right: -350px;
+}
+
+.board .main .title h1 {
+    font-size: 30px;
+    line-height: 35px;
+	margin-left: 100px;
+}
+
+.board .navigation, .dashboard .navigation div span {
+        display: block;
+    }
+
+.board .navigation {
+        width: 30px;
+        position: fixed;
+        z-index: 10px;
+    }
+
+.board .navigation div {
+        margin-top: 30vh;
+        margin-bottom: 10vh;
+    }
+
+.board .navigation div span {
+        margin-top: 5vh;
+    }
+
+#container {
+    position: absolute;
+}
+
+div.display{
+    width: 1000px;
+    display: block;
+    
+    
+}
+
+/* Display card styling */
+.card{
+    background-color:#fff;
+    width: 700px;
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 25px;
+    border: 2px, 2px, 2px, 2px;
+    margin-top: 1%;
+    margin-left: 10%;
+    
+}
+
+.card .date {
+    margin-left: -160px;
+    margin-top: 50px;
+}
+
+.card .btn {
+    width: 40px;
+    margin-left: 30px;
+}
+
+.card .started {
+    width: 100px;
+    margin-left: 30px;
+}
+
+.card .finished {
+    width: 100px;
+    margin-left: 30px;
+}
+
+.card {
+    margin-left: 80px;
+}
+
+div#upperLine{
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-top: 15px;
+    text-transform: capitalize;
+}
+
+div#upperLine button{
+    margin-right: -600px;
+}
+
+div#statusButtons{
+    width: 120px;
+    margin-right: 330px;
+    text-align: center;
+}
+
+#statusButtons button{
+    margin-bottom: 5px;
+}
+
+.modal .modal-dialog .modal-content .modal-body button {
+    float: right;
+}
+
+.modal .modal-dialog .modal-content .modal-footer button {
+    width: 75px;
+}
+
+
+
+
+
+

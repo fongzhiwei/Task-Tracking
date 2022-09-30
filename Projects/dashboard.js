@@ -28,7 +28,7 @@ function filterFunction() {
     input = selected.options[selected.selectedIndex];
     filter = input.text.toUpperCase();
     cards = document.getElementsByClassName("displayTaskSlot");
-    titles = document.querySelectorAll('[id=status]');
+    titles = document.querySelectorAll('[id=type]');
   
     if(filter == "FILTER"){
         for (i=0; i<cards.length; i++){
@@ -46,3 +46,4 @@ function filterFunction() {
       }
     }
   }
+  //test

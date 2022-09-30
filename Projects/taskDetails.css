@@ -1,0 +1,52 @@
+body{
+    background-color: aliceblue;
+}
+
+p{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.modal {
+    margin-top: 70px;
+}
+
+div.modal-body{
+    background-color:beige;
+    
+}
+
+div.modal-header{
+    justify-content: space-evenly;
+}
+
+
+.modal-body div{
+    display: flex;
+}
+
+
+#buttonSave{
+    float: right;
+    position: relative;
+    top: 30px;
+    right: 3%;
+}
+
+#buttonBack{
+    position: relative;
+    top: 30px;
+    left: 3%;
+    background-color: gray;
+    color: white;
+}
+
+#editBtn{
+    background-color: blue;
+    width: 70px;
+    font-size: 15px;
+}
+
+.main .modal-content .modal-body .mb-3 .form-label{
+    margin-right: 30px;
+}
