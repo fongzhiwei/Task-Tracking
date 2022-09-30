@@ -27,9 +27,7 @@ const loadTaskDetail = () => {
             const member = document.getElementById("member")
             member.innerText = taskObject.addMember
             const description = document.getElementById("description")
-            description.inn
-
-
+            description.innerText =taskObject.taskDesc
         }
     });
 
