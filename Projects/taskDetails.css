@@ -46,3 +46,7 @@ div.modal-header{
     width: 70px;
     font-size: 15px;
 }
+
+.main .modal-content .modal-body .mb-3 .form-label{
+    margin-right: 30px;
+}

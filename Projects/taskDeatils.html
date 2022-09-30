@@ -54,11 +54,84 @@
               
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="editBtn" onclick="editTask()"> Edit </button>
+                        <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal"> Edit </button>
                     </div>
               
                 </div>
             </div>
+
+            <section class = "main"><!-- Main -->
+
+                <!-- Create Task -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+    
+                        <!-- Information of the task -->
+                        <div class="modal-body">
+                            <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Task Name</label>
+                                <input type="email" class="form-control" id="editTaskName" aria-describedby="emailHelp" placeholder="Login Information Update"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="taskPriorityInput">Task Type</label> <br>
+                                <select name="taskTypeInput" id="editTaskType">
+                                    <option value="User Story">User Story</option>
+                                    <option value="Bugs">Bugs</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="storyPointInput">Story Points</label> <br>
+                                <input type="number" min = "1" class="form-control" id="editStoryPoint">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="taskPriorityInput">Task Priority</label> <br>
+                                <select name="taskPriorityInput" id="editTaskPriority">
+                                    <option value="Low">Low</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="taskStatus">Task Status</label> <br>
+                                <select name="taskStatus" id="editTaskStatus">
+                                    <option value="To Do Task">To Do Task</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Done">Done</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="addMember">Member 1</label> <br>
+                                <select name="addMember" id="editAddMember">
+                                    <option value=""> </option>
+                                    <option value="Alex Li"> Alex Li</option>
+                                    <option value="Anson Wong">Anson Wong</option>
+                                    <option value="Shiau Yen">Shiau Yen</option>
+                                    <option value="Yu Mei">Yu Mei</option>
+                                    <option value="Zhi Wei">Zhi Wei</option>
+                                    <option value="-">-</option>
+                                </select>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Task Description</label>
+                                <textarea type="email" class="form-control" id="editTaskDesc" aria-describedby="emailHelp" placeholder="Description on the task" rows = 4></textarea>
+                            </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button data-bs-dismiss="modal" onclick = "saveEdits()" type="button" class="btn btn-primary btn-default active">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- Main End -->
         </div>
         
         <a href="index-d.html"><button type="button" id = "buttonSave" onclick="saveEdits()" class="btn btn-primary btn-default active">Save Changes</button></a>

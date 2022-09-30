@@ -36,45 +36,30 @@ const loadTaskDetail = () => {
 
 };
 
-const editTask = () =>{
-    document.getElementById("name").contentEditable = "true";
-    document.getElementById("type").contentEditable = "true";
-    document.getElementById("story").contentEditable = "true";
-    document.getElementById("priority").contentEditable = "true";
-    document.getElementById("status").contentEditable = "true";
-    document.getElementById("member").contentEditable= "true";
-    document.getElementById("description").contentEditable = "true";
-}
 
 const saveEdits = () => {
-    changeName = document.getElementById("name").textContent;
-    changeType = document.getElementById("type").textContent;
-    changeStory = document.getElementById("story").textContent;
-    changePriority = document.getElementById("priority").textContent;
-    changeStat = document.getElementById("status").textContent;
-    changeMember = document.getElementById("member").textContent;
-    changeDesc = document.getElementById("description").textContent;
+    editName = document.getElementById("editTaskName").value;
+    editType = document.getElementById("editTaskType").value;
+    editPriority = document.getElementById("editTaskPriority").value
+    editMember = document.getElementById("editAddMember").value
+    editDesc = document.getElementById("editTaskDesc").value
+    editStat = document.getElementById("editTaskStatus").value
+    editStory = document.getElementById("editStoryPoint").value
 
-    globalStorage.forEach(function (taskItem){
-        const taskID = localStorage.getItem("taskDetail")
-        if (taskItem.id == taskID){
-          taskItem.taskName = changeName;
-          taskItem.taskType = changeType;
-          taskItem.storyPoint = changeStory;
-          taskItem.taskPriority = changePriority;
-          taskItem.taskStatus = changeStat;
-          taskItem.addMember = changeMember;
-          taskItem.taskDesc = changeDesc;
+    globalStorage.forEach(function(taskItem){
+        const taskID = localStorage.getItem("taskDetail");
+        if(taskItem.id == taskID){
+            taskItem.taskName = editName;
+            taskItem.taskType = editType;
+            taskItem.storyPoint = editStory;
+            taskItem.taskPriority = editPriority;
+            taskItem.taskStatus = editStat;
+            taskItem.addMember = editMember;
+            taskItem.taskDesc = editDesc;
         }
-      })
+    })
 
-    localStorage.setItem("task", JSON.stringify({task: globalStorage}));
+    localStorage.setItem("task",  JSON.stringify({task: globalStorage}));
 
-    document.getElementById("name").contentEditable = "false";
-    document.getElementById("type").contentEditable = "false";
-    document.getElementById("story").contentEditable = "false";
-    document.getElementById("priority").contentEditable = "false";
-    document.getElementById("status").contentEditable = "false";
-    document.getElementById("member").contentEditable= "false";
-    document.getElementById("description").contentEditable = "false";
-}
+    window.location.reload();
+};
