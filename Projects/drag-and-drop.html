@@ -9,20 +9,20 @@
   </head>
     <body onload="loadTaskData()">
 
-      <!-- todo -->
+    <!-- todo -->
       <div class="todo-container">
+        <a href="SprintCreate.html"><button type="button" id = "button1" class="btn btn-primary btn-default active">Back</button></a>
         <div class="status" id="no_status">
           <h1>Task Backlog</h1>
-          <a href="SprintCreate.html"><button type="button" id = "button1" class="btn btn-primary btn-default active">Back</button></a>
         </div>
 
         <div class="status" id="add_to_sprint">
           <h1> Sprint Backlog </h1>
-          <a href="sprintDetails.html"><button type="button" id = "button2" onclick="addToSprint()" class="btn btn-primary btn-default active">Save Changes</button></a>
         </div>
 
-      <div id="overlay"></div>
-
+        <a href="sprintDetails.html"><button type="button" id = "button2" onclick="addToSprint()" class="btn btn-primary btn-default active">Save Changes</button></a>
+    
+      </div>
       <script src="drag-and-drop.js"></script>
   </body>
 </html>

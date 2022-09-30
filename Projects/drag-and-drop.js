@@ -57,9 +57,6 @@ function dragDrop() {
 function createTodo(task) {
   const todo_div = document.createElement("div");
   const txt = document.createTextNode(task)
-//   const input_val = document.getElementById("todo_input").value;
-//   const txt = document.createTextNode(input_val);
-
 
   todo_div.appendChild(txt);
   todo_div.classList.add("todo");
@@ -71,9 +68,6 @@ function createTodo(task) {
   todo_div.appendChild(span);
 
   no_status.appendChild(todo_div);
-
-
-  //   console.log(todo_div);
 
   todo_div.addEventListener("dragstart", dragStart);
   todo_div.addEventListener("dragend", dragEnd);
