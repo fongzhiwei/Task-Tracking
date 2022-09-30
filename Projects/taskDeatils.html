@@ -16,7 +16,8 @@
 
     <body onload="openTaskModal()">
         <div id="container">
-            <a href="index-d.html"><button type="button" id = "buttonBack" class="btn btn-primary btn-default active">Back</button></a>
+            <a href="index-d.html"></a><button type="button" id = "buttonBack" class="btn btn-primary btn-default active">Back</button></a>
+
             <div class="modal" id="myModal">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -28,28 +29,27 @@
               
                     <!-- Modal body -->
                     <div class="modal-body">  
-                            <div class="mb-2" id="nameDiv">
-                                <div><p><b>Task Name: </b></p></div><div class="text"><p id="name">Taskname</p></div>
-                            </div>
-                            <div class="mb-2" id="typeDiv">
-                                <div><p><b>Task Type: </b></p></div><p id="type">User Story</p>
-                            </div>
-                            <div class="mb-2" id="storyDiv">
-                                <div><p><b>Story Point: </b></p></div><p id="story">12</p>
-                            </div>
-                            <div class="mb-2" id="priorityDiv">
-                                <div><p><b>Task priority:  </b></p></div><p id="priority">High </p>
-                            </div>
-                            <div class="mb-2" id="statusDiv">
-                                <div><p><b>Task Status: </b></p></div><p id="status">To Do Task </p>
-                            </div>
-                            <div class="mb-2" id="memberDiv">
-                                <div><p><b>Members: </b></p></div><p id="member">Feigi</p>
-                            </div>
-                            <div class="mb-2" id="descripDiv">
-                                <div><p><b>Task Description: </b></p></div> <p id="description">This is descriptions</p>
-                            </div>
-                            
+                        <div class="mb-2" id="nameDiv">
+                            <div><p><b>Task Name: </b></p></div><div class="text"><p id="name"></p></div>
+                        </div>
+                        <div class="mb-2" id="typeDiv">
+                            <div><p><b>Task Type: </b></p></div><p id="type"></p>
+                        </div>
+                        <div class="mb-2" id="storyDiv">
+                            <div><p><b>Story Point: </b></p></div><p id="story"></p>
+                        </div>
+                        <div class="mb-2" id="priorityDiv">
+                            <div><p><b>Task priority:  </b></p></div><p id="priority"></p>
+                        </div>
+                        <div class="mb-2" id="statusDiv">
+                            <div><p><b>Task Status: </b></p></div><p id="status"></p>
+                        </div>
+                        <div class="mb-2" id="memberDiv">
+                            <div><p><b>Members: </b></p></div><p id="member"></p>
+                        </div>
+                        <div class="mb-2" id="descripDiv">
+                            <div><p><b>Task Description: </b></p></div> <p id="description"></p>
+                        </div>      
                     </div>
               
                     <!-- Modal footer -->
@@ -57,11 +57,12 @@
                         <button type="button" class="btn btn-secondary" id="editBtn" onclick="editTask()"> Edit </button>
                     </div>
               
-                  </div>
                 </div>
-              </div>
-              <a href="index-d.html"><button type="button" id = "buttonSave" onclick="saveEdits()" class="btn btn-primary btn-default active">Save Changes</button></a>
+            </div>
         </div>
-          <script src="taskDetails.js"></script>
+        
+        <a href="#"><button type="button" id = "buttonSave" onclick="saveEdits()" class="btn btn-primary btn-default active">Save Changes</button></a>
+
+        <script src="taskDetails.js"></script>
     </body>
 </html>

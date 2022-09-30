@@ -21,10 +21,6 @@ div.modal-header{
     display: flex;
 }
 
-div.text{
-    background-color: white;
-}
-
 
 #buttonSave{
     float: right;
@@ -43,4 +39,6 @@ div.text{
 
 #editBtn{
     background-color: blue;
+    width: 70px;
+    font-size: 15px;
 }
