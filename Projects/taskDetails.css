@@ -1,0 +1,46 @@
+body{
+    background-color: aliceblue;
+}
+
+p{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.modal-body{
+    background-color:beige;
+    
+}
+
+div.modal-header{
+    justify-content: space-evenly;
+}
+
+
+.modal-body div{
+    display: flex;
+}
+
+div.text{
+    background-color: white;
+}
+
+
+#buttonSave{
+    float: right;
+    position: relative;
+    top: 30px;
+    right: 3%;
+}
+
+#buttonBack{
+    position: relative;
+    top: 30px;
+    left: 3%;
+    background-color: gray;
+    color: white;
+}
+
+#editBtn{
+    background-color: blue;
+}
