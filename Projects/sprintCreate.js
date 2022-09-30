@@ -106,3 +106,9 @@ const buttonPressed = event => {
   }
   localStorage.setItem("sprintDetail", targetId)
 }
+function finishFunc(){
+  var ctnBtn = document.getElementById("btn1")
+  ctnBtn.remove();
+  var finishBtn = document.getElementById("finish")
+  finishBtn.remove();
+}
