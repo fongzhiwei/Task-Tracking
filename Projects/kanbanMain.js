@@ -40,8 +40,10 @@ function createTodo(task) {
     const {task} = JSON.parse(getTaskData);
   
     task.map((taskObject) => {
-		// if (taskObject.taskName) == "in sprint":
-		createTodo(taskObject.taskName);
+		if(taskObject.sprintStatus == "In Sprint"){
+			createTodo(taskObject.taskName);
+		}
+
   
       globalStorage.push(taskObject);
     });
