@@ -14,42 +14,26 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     </head>
     <body onload="openModal()">
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-          
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Sprint Details</h4>
-                </div>
-          
-                <!-- Modal body -->
-                <div class="modal-body">  
-                        <div class="mb-3 mt-3" id="sprintDiv">
-                         <p id="sprintName">Sprint1</p>
+          <div id="pageContainer">
+                <div class="detailContainer">  
+                  <h5 class="modal-title">Sprint Details</h5>
+                        <div id="sprintDiv">
+                         <p>Sprint Name: <span id="sprintName">Sprint1</span></p>
                         </div>
-                        <br>
-                        <br>
-                        <div class="mb-3" id="startDate1">
-                         <p id="sprintStartDate">2022-31231</p>
+                        <div id="startDate1">
+                         <p>Start Date: <span id="sprintStartDate">2022-31231</span></p>
                         </div>
-                        <br><br>
-                        <div class="mb-3" id="endDate1">
-                            <p id="sprintEndDate">2022-31231</p>
+                        <div id="endDate1">
+                          <p>End Date: <span id="sprintEndDate">2022-31231</span></p>
                            </div>
                 </div>
-          
-                <!-- Modal footer -->
-                <div class="modal-footer">
+
+                
+                <div class="sprint-container" id="tasklist">
+
                 </div>
-          
-              </div>
-            </div>
-          </div>
-
-          <div class="row sprint-container" id="tasklist">
-
-          </div>
+        </div>
+        
           <script src="sprintDetails.js"></script>
     </body>
 </html>
