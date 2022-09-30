@@ -1,8 +1,6 @@
 const taskCreation = document.querySelector(".sprint-container");
 
 const openModal=()=>{
-    const open = document.getElementById("myModal");
-    open.style.display= "block";
     loadSprintData();
 };
 
@@ -11,7 +9,7 @@ let globalStorage = [];
 
 const generateNewTask = (taskData) => `
 <div class ="displayTaskSlot">
-  <div class="col-md-6 col-lg-4 mt-3" >
+  <div class="mt-3">
     <div class="card shadow-sm task__card">
 
       <div class="card-header d-flex justify-content-end task__card__header">
