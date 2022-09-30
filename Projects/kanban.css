@@ -62,62 +62,28 @@ body {
     width: 1300px;
     background: rgb(149, 201, 244);
     border-radius: 5px;
-	margin-left: 75px;
+    margin-left: 75px;
 }
 
-/* Font of kanban */
 .board .kanban * {
     font-family: 'Mukta', sans-serif;
 }
 
 /* To make sure every column is having an equal width */
 .board .kanban__column {
-	flex: 1;
+    flex: 1;
 }
 
 /* As long as the column is not the last one then it will have a right margin */
-.board .kanban__column:not(:last-child) {
-	margin-right: 30px;
+.kanban__column:not(:last-child) {
+    margin-right: 30px;
 }
 
 /* Style of the title */
 .board .kanban__column-title {
-	margin-bottom: 20px;
-	font-size: 30px;
-	color: black;
-	user-select: none;
-	text-align: center;
-}
-
-/* Style input of user */
-.board .kanban__item-input {
-	padding: 10px 15px;
-	box-sizing: border-box;
-	background: white;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-/* Drag and drop funciton set up */
-.board .kanban__dropzone {
-	height: 10px;
-	transition: background 0.15s, height 0.15s;
-}
-
-/* Colour changing while drag and drop (currently set under inspect code) */
-.board .kanban__dropzone--active {
-	height: 20px;
-	background: rgba(0, 0, 0, 0.25);
-}
-
-/* Style of button "Add" */
-.board .kanban__add-item {
-	width: 100%;
-	padding: 10px 0;
-	font-size: 16px;
-	color: black;
-	background: rgba(0, 0, 0, 0.1);
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: black;
+    user-select: none;
+    text-align: center;
 }
