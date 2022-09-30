@@ -9,6 +9,7 @@ p{
 
 div.modal-body{
     background-color:beige;
+    text-align: center;
     
 }
 
@@ -16,10 +17,6 @@ div.modal-header{
     justify-content: space-evenly;
 }
 
-
-.modal-body div{
-    display: flex;
-}
 
 div.text{
     background-color: white;
