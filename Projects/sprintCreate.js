@@ -97,23 +97,6 @@ const statusButton = (event)=>{
    
 }
 
-const currentSprintDetails = () =>{
-
-}
-
-const buttonPressed = event => {
-  event = window.event;
-  var targetId = event.target.id;
-
-  if (/[a-z]/i.test(targetId)){
-    targetId = event.target.parentNode.id;
-  }
-
-  if (/[a-z]/i.test(targetId)){
-    targetId = event.target.parentNode.parentNode.id;
-  }
-  localStorage.setItem("sprintDetail", targetId)
-}
 function finishFunc(){
   var ctnBtn = document.getElementById("btn1")
   ctnBtn.remove();
