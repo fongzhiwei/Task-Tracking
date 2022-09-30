@@ -16,8 +16,8 @@ const generateNewCard = (sprint) => `
         <i class="fas fa-trash-alt"id=${sprint.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)" ></i>
       </button>
 
-      <div><button id=${sprint.id1} class = "started" onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
-      <div><button class = "finished" type="button" id="finish" onclick=""> Finished </button></div>
+      <div id = "btn1"><button id=${sprint.id1} class = "started" onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
+      <div><button class = "finished" type="button" id="finish" onclick="finishFunc()"> Finished </button></div>
     </div>
   </div> 
 </div>`
