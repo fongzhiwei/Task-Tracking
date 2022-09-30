@@ -94,29 +94,51 @@ div#upperLine{
     justify-content: space-between;
     margin-left: 15px;
     margin-top: 15px;
-}
-
-div#date{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 15px;
-}
-
-div#date2{
-    margin-left: 15px;;
+    text-transform: capitalize;
 }
 
 div#upperLine button{
-    margin-right: 30px;
+    margin-right: -600px;
 }
 
 div#statusButtons{
-    display: inline-block;
+    width: 120px;
+    margin-right: 330px;
+    text-align: center;
 }
 
 #statusButtons button{
     margin-bottom: 5px;
 }
+
+.modal .modal-dialog .modal-content .modal-body button {
+    float: right;
+}
+
+.modal .modal-dialog .modal-content .modal-footer button {
+    width: 75px;
+}
+
+.card .date {
+    margin-left: -160px;
+    margin-top: 50px;
+}
+
+.card .btn {
+    width: 40px;
+    margin-left: 30px;
+}
+
+.card .started {
+    width: 100px;
+    margin-left: 30px;
+}
+
+.card .finished {
+    width: 100px;
+    margin-left: 30px;
+}
+
 
 
 
