@@ -89,4 +89,6 @@ const statusButton = (event)=>{
 function finishFunc(){
   var ctnBtn = document.getElementById("btn1")
   ctnBtn.remove();
+  var finishBtn = document.getElementById("finish")
+  finishBtn.remove();
 }
