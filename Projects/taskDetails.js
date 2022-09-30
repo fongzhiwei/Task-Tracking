@@ -6,13 +6,13 @@ const openTaskModal=()=>{
 
 // get task data from local storage
 const loadTaskDetail = () => {
-    const taskID = localStorage.getItem("sprintDetail")
+    const taskID = localStorage.getItem("taskDetail")
     const getTaskData = localStorage.getItem("task");
-    const {taskData} = JSON.parse(getTaskData);
-    console.log(taskData)
+    const {task} = JSON.parse(getTaskData);
 
-    taskData.map((taskObject) => {
+    task.map((taskObject) => {
         if(taskObject.id == taskID){
+            console.log(taskObject)
     
             const name = document.getElementById("name");
             name.innerText = taskObject.taskName
@@ -27,9 +27,7 @@ const loadTaskDetail = () => {
             const member = document.getElementById("member")
             member.innerText = taskObject.addMember
             const description = document.getElementById("description")
-            description.inn
-
-
+            description.innerText =taskObject.taskDesc
         }
     });
 
