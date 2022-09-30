@@ -2,6 +2,7 @@
 body {
     margin: 10px;
     background-color: aliceblue;
+    align-items: center;
 }
 
 /* navigation bar styling */
@@ -87,3 +88,17 @@ body {
     user-select: none;
     text-align: center;
 }
+
+.todo-container {
+    width: 1000px;
+    height: 80vh;
+    display: flex;
+  }
+  
+  .status {
+    width: 33%;
+    background-color: #f3f3f3;
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+  }
+  
