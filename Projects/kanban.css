@@ -93,12 +93,11 @@ body {
     width: 1310px;
     height: 80vh;
     display: flex;
-    margin-left: 75px;
+    margin-left: 80px;
   }
   
 .status {
     width: 33%;
-    background-color: #f3f3f3;
     position: relative;
     padding: 60px 1rem 0.5rem;
   }
