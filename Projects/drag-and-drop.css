@@ -5,15 +5,46 @@
   body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+  }
+
+  #btnDiv{ 
+    float: left;
+    position: relative;
+    top: 30px;
+    left: 1%;
+  }
+
+  #saveBtnDiv{
+    position: relative;
+    right: 1%;
+    top: 60px;
+    float: right;
+  }
+
+  button{
+    width: fit-content;
+    height: 40px;
+    font-size: 25px;
+  }
+
+  #btnDiv button{
+    background-color: gray;
+    color: white;
+  }
+
+  #saveBtnDiv button{
+    background-color:royalblue;
+    color: white;
   }
   
   .todo-container {
     width: 1000px;
     height: 80vh;
     display: flex;
+    position: relative;
+    left: 10%;
+    top: 70px;
   }
   
   .status {
@@ -80,4 +111,6 @@
   .todo .close:hover {
     color: #343444;
   }
+
+  
   

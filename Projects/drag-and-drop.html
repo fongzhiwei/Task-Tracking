@@ -7,6 +7,7 @@
     <title>Add task into sprint</title>
   </head>
   <body onload="loadTaskData()">
+    <div><div id="btnDiv"><button type="button" class="btn btn-primary btn-default active" onclick="location.href='SprintCreate.html';">Back</button></div>
     <!-- todo -->
     <div class="todo-container">
       <div class="status" id="no_status">
@@ -18,10 +19,9 @@
 
 
     <div id="overlay"></div>
+</div>
 
-
-    <button type="button"  class="btn btn-primary btn-default active">Bac</button>
-    <button type="button" onclick="addToSprint()" class="btn btn-primary btn-default active">Save Changes</button>
+    <div id="saveBtnDiv"><button type="button" onclick="addToSprint()" class="btn btn-primary btn-default active">Save Changes</button></div>
     
 
     <script src="drag-and-drop.js"></script>
