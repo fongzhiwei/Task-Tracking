@@ -16,12 +16,11 @@ const generateNewCard = (sprint) => `
         <i class="fas fa-trash-alt"id=${sprint.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)" ></i>
       </button>
 
-      <div><button id=${sprint.id1} class = "started" onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
-      <div><button class = "finished" type="button" id="finish" onclick=""> Finished </button></div>
+      <div id = "btn1"><button id=${sprint.id1} class = "started" onclick="statusButton.apply(this, arguments)">Get Started</button></div> 
+      <div><button class = "finished" type="button" id="finish" onclick="finishFunc()"> Finished </button></div>
     </div>
   </div> 
 </div>`
-
 ;
 
 // declaring an empty array to store data
@@ -80,17 +79,22 @@ const deleteTask = (event) => {
   }
 };
 
+
 const statusButton = (event)=>{
-   event = window.event;
-   const statusId = event.target.id;
-   localStorage.setItem(statusId, "Continue");
-   const button1 = document.getElementById(statusId);
-   button1.innerText = localStorage.getItem(statusId);
-
-}
-
-const currentSprintDetails = () =>{
-
+  event = window.event;
+  const statusId = event.target.id;
+  var ctnFlag = localStorage.getItem(statusId).toString();
+  
+  if (ctnFlag === "Get Started"){
+    localStorage.setItem(statusId, "Continue");
+    const button1 = document.getElementById(statusId);
+    button1.innerText = localStorage.getItem(statusId);
+    location.href = "drag-and-drop.html";
+  }
+  else{
+    location.href = "sprintDetails.html";
+  }
+   
 }
 
 const buttonPressed = event => {
@@ -106,6 +110,8 @@ const buttonPressed = event => {
   }
   localStorage.setItem("sprintDetail", targetId)
 }
+
+
 function finishFunc(){
   var ctnBtn = document.getElementById("btn1")
   ctnBtn.remove();

@@ -3,18 +3,18 @@ const taskCreation = document.querySelector(".task_creation");
 
 // new task template
 const generateNewTask = (taskData) => `
-<div class ="displayTaskSlot">
-  <div class="col-md-6 col-lg-4 mt-3" >
+<div class ="displayTaskSlot" onclick="taskPressed()">
+  <div class="col-md-6 col-lg-4 mt-3">
     <div class="card shadow-sm task__card">
 
-      <div class="card-header d-flex justify-content-end task__card__header">
-        <button type="button" class="btn btn-outline-danger" id=${taskData.id} onclick="deleteTask.apply(this, arguments)" data-bs-toggle="modal">
+      <div class="card-header d-flex justify-content-end task__card__header" id=${taskData.id}>
+        <button type="button" class="btn btn-outline-danger"  onclick="deleteTask.apply(this, arguments)" data-bs-toggle="modal">
           <i class="fas fa-trash-alt"id=${taskData.id} data-bs-toggle="modal" onclick="deleteTask.apply(this, arguments)"></i>
         </button>
 
       </div>
 
-      <div class="card-body">
+      <div class="card-body" id=${taskData.id}>
         <h2 class="task__card__name" id="name">${taskData.taskName}
         </h2>
           <form>
@@ -123,3 +123,18 @@ const saveEdit = () => {
   document.getElementById("member").contentEditable = "false";
   document.getElementById("story").contentEditable = "false";
 };
+
+const taskPressed = event => {
+  event = window.event;
+  var targetId = event.target.id;
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.id;
+  }
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.parentNode.id;
+  }
+  console.log(targetId)
+  localStorage.setItem("taskDetail", targetId)
+}

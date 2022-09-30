@@ -70,7 +70,7 @@ const loadSprintData = () => {
     const {sprintTask} = JSON.parse(getSprintData);
 
     sprintTask.map((sprintObject) => {
-        if(sprintObject.id == taskID){
+        if(sprintObject.id1 == taskID){
     
             const sprintName = document.getElementById("sprintName");
             sprintName.innerHTML = sprintObject.sprintTitle
