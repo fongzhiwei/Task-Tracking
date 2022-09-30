@@ -68,3 +68,57 @@ body {
 #container {
     position: absolute;
 }
+
+div.display{
+    width: 1000px;
+    display: block;
+    
+    
+}
+
+.card{
+    background-color:#fff;
+    width: 700px;
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 25px;
+    border: 2px, 2px, 2px, 2px;
+    margin-top: 1%;
+    margin-left: 10%;
+    
+}
+
+div#upperLine{
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+div#date{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+div#date2{
+    margin-left: 15px;;
+}
+
+div#upperLine button{
+    margin-right: 30px;
+}
+
+div#statusButtons{
+    display: inline-block;
+}
+
+#statusButtons button{
+    margin-bottom: 5px;
+}
+
+
+
+
+

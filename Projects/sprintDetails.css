@@ -1,0 +1,20 @@
+body{
+    background-color: aliceblue;
+}
+
+p{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.modal-body{
+    background-color:beige;
+    height: 500px;
+}
+
+div#sprintDiv, #startDate1, #endDate1{
+    background-color: white;
+    text-align: center;
+}
+
+
