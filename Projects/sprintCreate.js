@@ -2,7 +2,7 @@
 const sprintCreation = document.querySelector(".display");
 
 const generateNewCard = (sprint) => `<div class = "card">
-<div>
+<div id=${sprint.id} onclick ="buttonPressed()">
     <div id="upperLine">
         <h5 id="taskName"> <b> ${sprint.sprintTitle} </b></h5>
         <button type="button" class="btn btn-outline-danger" id=${sprint.id} class="asa" onclick="deleteTask.apply(this, arguments)" data-bs-target="#animateModal" data-bs-toggle="modal" >
@@ -25,16 +25,16 @@ const generateNewCard = (sprint) => `<div class = "card">
 let globalStorage = [];
 
 // get task data from local storage
-const loadTaskData = () => {
-  const getTaskData = localStorage.getItem("sprint");
-  const {sprintTask} = JSON.parse(getTaskData);
+const loadSprintData = () => {
+  const getSprintData = localStorage.getItem("sprint");
+  const {sprintTask} = JSON.parse(getSprintData);
 
-  sprintTask.map((taskObject) => {
-    sprintCreation.insertAdjacentHTML("beforeend", generateNewCard(taskObject));
-    const b = document.getElementById(taskObject.id1);
-    b.innerText = localStorage.getItem(taskObject.id1);
+  sprintTask.map((sprintObject) => {
+    sprintCreation.insertAdjacentHTML("beforeend", generateNewCard(sprintObject));
+    const b = document.getElementById(sprintObject.id1);
+    b.innerText = localStorage.getItem(sprintObject.id1);
 
-    globalStorage.push(taskObject);
+    globalStorage.push(sprintObject);
     
   });
 
@@ -84,4 +84,22 @@ const statusButton = (event)=>{
    const button1 = document.getElementById(statusId);
    button1.innerText = localStorage.getItem(statusId);
 
+}
+
+const currentSprintDetails = () =>{
+
+}
+
+const buttonPressed = event => {
+  event = window.event;
+  var targetId = event.target.id;
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.id;
+  }
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.parentNode.id;
+  }
+  localStorage.setItem("sprintDetail", targetId)
 }
