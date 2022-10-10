@@ -7,6 +7,10 @@ p{
     font-family: 'Courier New', Courier, monospace;
 }
 
+.modal {
+    margin-top: 70px;
+}
+
 div.modal-body{
     background-color:beige;
     text-align: center;
@@ -18,8 +22,8 @@ div.modal-header{
 }
 
 
-div.text{
-    background-color: white;
+.modal-body div{
+    display: flex;
 }
 
 
@@ -40,4 +44,10 @@ div.text{
 
 #editBtn{
     background-color: blue;
+    width: 70px;
+    font-size: 15px;
+}
+
+.main .modal-content .modal-body .mb-3 .form-label{
+    margin-right: 30px;
 }

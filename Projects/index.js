@@ -137,4 +137,5 @@ const taskPressed = event => {
   }
   console.log(targetId)
   localStorage.setItem("taskDetail", targetId)
+  window.location.replace("taskDeatils.html");
 }

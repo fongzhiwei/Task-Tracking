@@ -97,7 +97,7 @@ const loadTaskData = () => {
       console.log(taskAdded.textContent)
       if (taskItem.taskName == taskAdded.textContent){
         taskItem.sprintStatus = "In Sprint";
-        console.log("added task into sprint")
+
       }
     })
     localStorage.setItem("task", JSON.stringify({task: globalStorage}));
