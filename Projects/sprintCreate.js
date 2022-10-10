@@ -1,4 +1,3 @@
-
 const sprintCreation = document.querySelector(".display");
 
 const generateNewCard = (sprint) => `

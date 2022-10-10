@@ -1,0 +1,65 @@
+/* Styling for the whole board */
+
+*{
+    font-family: 'Mukta', sans-serif; 
+}
+
+body {
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+/* Navigation styling */
+.dashboard .navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -10px;
+}
+
+.dashboard .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.dashboard .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+.dashboard .navigation,
+    .dashboard .navigation div span 
+    {
+        display: block;
+    }
+
+.dashboard .navigation 
+{
+    width: 60px;
+    position: fixed;
+    z-index: 10px;
+}
+
+section.main 
+{
+    margin-left: 90px;
+    margin-right: 20px;
+}
+
+.dashboard .navigation div 
+{
+    margin-top: 30vh;
+    margin-bottom: 19vh;
+}
+
+.dashboard .navigation div span 
+{
+    margin-top: 5vh;
+}
+
+/* Title */
+.dashboard .main .title {
+    margin-top: 50px;
+}
