@@ -47,22 +47,3 @@ const saveChanges = () => {
   };
 
 
-  const deleteMember = (event) => {
-    event = window.event;
-    const targetId = event.target.id;
-    const tagName = event.target.tagName;
-  
-    globalStorage = globalStorage.filter(
-      (member) => member.id != targetId
-    );
-  
-    localStorage.setItem("team", JSON.stringify({teamMembers: globalStorage}));
-  
-    if (tagName == "BUTTON") {
-      return TeamAdding.removeChild(
-        event.target.parentNode.parentNode.parentNode
-      );
-    } else {
-      return TeamAdding.removeChild(event.target.parentNode.parentNode.parentNode.parentNode);
-    }
-  };
