@@ -63,3 +63,48 @@ section.main
 .dashboard .main .title {
     margin-top: 50px;
 }
+
+.dashboard .main .title .container button {
+    float: right;
+    margin-top: -65px;
+    margin-right: -100px;
+}
+.formDiv{
+    display: flex;
+}
+
+div.display{
+    
+    width: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 50px;
+    right: 60px;
+    
+    
+}
+
+.card{
+    background-color:#fff;
+    width: 400px;
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 25px;
+    border: 2px, 2px, 2px, 2px;
+    margin-top: 1%;
+    margin-left: 10%;
+    
+}
+
+div#upperLine{
+    width: 360px;
+    display: block;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#statusButtons{
+    float: right;
+    margin-bottom: 5px;
+}
