@@ -33,35 +33,3 @@ new Chart("myChart", {
     }
   }
 });
-
-/*
-function draw() {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-
-      axisX:{
-       title: "axisX Title"
-      },
-
-      axisY:{
-        title: "axisX Title"
-       },
-
-      data: [
-      {
-        type: "column",
-        dataPoints: [
-        { x: "day1", y: 1.5 },
-        { x: "day2", y: 1.3},
-        { x: "day3", y: 2.4 },
-        { x: "day4", y: 2.32 },
-        { x: "day5", y: 1.26 },
-        { x: "day6", y: 3 },
-        { x: "day7", y: 3.1 }
-        ]
-      }
-      ]
-    });
-
-    chart.render();
-  } */
