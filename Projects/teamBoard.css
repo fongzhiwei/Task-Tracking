@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: -10px;
+    margin-top: -5px;
 }
 
 .dashboard .navigation img.logo {
@@ -64,6 +64,10 @@ section.main
     margin-top: 50px;
 }
 
+.dashboard .main .title h1{
+    font-size: 35px;
+}
+
 .dashboard .main .title .container button {
     float: right;
     margin-top: -65px;
@@ -74,27 +78,21 @@ section.main
 }
 
 div.display{
-    
-    width: 1000;
+    width: 1500px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    top: 50px;
-    right: 60px;
-    
-    
 }
 
 .card{
     background-color:#fff;
     width: 400px;
-    height: fit-content;
+    height: 110px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 25px;
     border: 2px, 2px, 2px, 2px;
-    margin-top: 1%;
-    margin-left: 10%;
-    
+    margin-top: 40px;
+    margin-left: 80px;
 }
 
 div#upperLine{
