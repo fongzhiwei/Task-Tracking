@@ -1,0 +1,122 @@
+* Styling for the whole board */
+*{
+    font-family: 'Mukta', sans-serif; 
+}
+
+body {
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+/* Navigation styling */
+.dashboard .navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dashboard .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.dashboard .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+.dashboard .navigation,
+    .dashboard .navigation div span 
+    {
+        display: block;
+    }
+
+.dashboard .navigation 
+{
+    width: 60px;
+    position: fixed;
+    z-index: 10px;
+}
+
+.dashboard .navigation div 
+{
+    margin-top: 30vh;
+    margin-bottom: 19vh;
+}
+
+.dashboard .navigation div span 
+{
+    margin-top: 5vh;
+}
+
+/* Title */
+.dashboard .main .title {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.dashboard .main .title h1{
+    font-size: 35px;
+}
+
+/* Average Working Hours List styling */
+.average-time {
+    margin-top: 50px;
+    margin-left: 100px;
+    text-transform: capitalize;
+}
+
+.time-list {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 90%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+table thead tr {
+    color: black;
+    background: aliceblue;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(even){
+    background: aliceblue;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+.average-time .time-list h1 {
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+/* button styling  */
+.main .title .container button {
+    float: right;
+    margin-top: -50px;
+}
