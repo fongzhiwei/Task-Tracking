@@ -63,3 +63,16 @@ const saveEdits = () => {
 
     window.location.reload();
 };
+
+const saveTime = (time) =>{
+    const taskID = localStorage.getItem("taskDetail");
+    globalStorage.forEach(function (taskItem){
+        if (taskItem.id == taskID){
+            if (taskItem.hasOwnProperty("timeTotal")){
+                taskItem.timetotal += time;
+            }
+            else {taskItem.timetotal = time;}
+        }
+      })
+      localStorage.setItem("task", JSON.stringify({task: globalStorage}));
+};
