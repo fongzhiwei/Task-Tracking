@@ -39,6 +39,7 @@ const saveChanges = () => {
       id: Date.now(),
       name: document.getElementById("memberName").value, 
       address: document.getElementById("email").value,
+      password: document.getElementById("passwordMember").value,
     };
     TeamAdding.insertAdjacentHTML("beforeend", generateNewCard(teamData));
   
