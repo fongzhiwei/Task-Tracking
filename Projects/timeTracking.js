@@ -1,6 +1,11 @@
+// declaring variables for time tracking
 let t;
 let started = true;
 let elapsedTime = 0;
+
+// declaring an empty array to store data
+let globalStorage = [];
+let globalTimeStorage = [];
 
 const openTaskModal=()=>{
     const open = document.getElementById("myModal");
@@ -8,12 +13,11 @@ const openTaskModal=()=>{
     loadTaskDetail();
 };
 
-// declaring an empty array to store data
-let globalStorage = [];
+
 
 // get task data from local storage
 const loadTaskDetail = () => {
-    const taskID = localStorage.getItem("taskDetail")
+    const taskID = localStorage.getItem("taskDetail");
     const getTaskData = localStorage.getItem("task");
     const {task} = JSON.parse(getTaskData);
 
@@ -39,6 +43,18 @@ const loadTaskDetail = () => {
             timer.innerText = taskObject.timeTotal
         }
     });
+
+    const getTeamTime = localStorage.getItem("teamTime");
+    const {memberTime} = JSON.parse(getTeamTime);
+
+  
+    memberTime.map((memberTimeTrack) => {
+      globalTimeStorage.push(memberTimeTrack);
+    });
+
+    console.log(globalTimeStorage);
+
+
 };
 
 
@@ -90,9 +106,12 @@ const resetTime = () =>{
 
 
 const saveTime = (time) =>{
+    var member ="";
     const taskID = localStorage.getItem("taskDetail");
     globalStorage.forEach(function (taskItem){
         if (taskItem.id == taskID){
+            member = taskItem.addMember;
+            console.log(member);
             if (taskItem.hasOwnProperty("timeTotal")){
                 taskItem.timeTotal += time;
             }
@@ -100,4 +119,33 @@ const saveTime = (time) =>{
         }
       })
       localStorage.setItem("task", JSON.stringify({task: globalStorage}));
+
+    
+      
+
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      
+      today = mm + '/' + dd + '/' + yyyy;
+      console.log(today)
+      
+
+      globalTimeStorage.forEach(function (teamMember){
+        if (teamMember.name == member){
+            console.log("yes");
+            if (teamMember.hasOwnProperty(today)){
+                teamMember[today] += time;
+            }
+            else {
+                teamMember[today] = time;
+                console.log("no");
+            }
+        }
+        
+      })
+      localStorage.setItem("teamTime", JSON.stringify({memberTime: globalTimeStorage}));
+
+      
 };

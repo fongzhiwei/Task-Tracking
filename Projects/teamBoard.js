@@ -21,6 +21,7 @@ const generateNewCard = (member) => `
 
 // declaring an empty array to store data
 let globalStorage = [];
+let globalTimeStorage = [];
 
 // get task data from local storage
 const loadTeamData = () => {
@@ -33,13 +34,22 @@ const loadTeamData = () => {
     
   });
 
+  const getTeamTime = localStorage.getItem("teamTime");
+  const {memberTime} = JSON.parse(getTeamTime);
+
+  memberTime.map((memberTimeTrack) => {
+    globalTimeStorage.push(memberTimeTrack);
+  });
+
+
 };
 
 
 // save changes of new task 
 const saveChanges = () => {
+    var id = Date.now();
     const teamData = {
-      id: Date.now(),
+      id: id,
       name: document.getElementById("memberName").value, 
       address: document.getElementById("email").value,
       password: document.getElementById("passwordMember").value,
@@ -48,6 +58,14 @@ const saveChanges = () => {
   
     globalStorage.push(teamData);
     localStorage.setItem("team", JSON.stringify({teamMembers: globalStorage}));
+
+    const memberTime = {
+      id: id,
+      name: document.getElementById("memberName").value,
+    }
+    globalTimeStorage.push(memberTime);
+    localStorage.setItem("teamTime", JSON.stringify({memberTime: globalTimeStorage}));
+
   };
 
   
@@ -61,6 +79,12 @@ const deleteMember = (event) => {
   );
 
   localStorage.setItem("team", JSON.stringify({teamMembers: globalStorage}));
+
+  globalTimeStorage = globalTimeStorage.filter(
+    (memberObject) => memberObject.id != targetId
+  );
+
+  localStorage.setItem("teamTime", JSON.stringify({memberTime: globalTimeStorage}));
 
   if (tagName == "BUTTON") {
     return TeamAdding.removeChild(
