@@ -8,7 +8,7 @@ const generateNewCard = (member) => `
           <i class="fas fa-trash-alt"id=${member.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteMember.apply(this, arguments)" ></i>
         </button>
         <div id = "analytics">
-          <a href="graph.html"><span class="material-symbols-outlined">monitoring</span></a>
+          <a href="graph.html" onclick="memberPressed()"><span class="material-symbols-outlined" id=${member.id}>monitoring</span></a>
         </div>
       </div>
 
@@ -21,6 +21,7 @@ const generateNewCard = (member) => `
 
 // declaring an empty array to store data
 let globalStorage = [];
+let globalTimeStorage = [];
 
 // get task data from local storage
 const loadTeamData = () => {
@@ -33,13 +34,22 @@ const loadTeamData = () => {
     
   });
 
+  const getTeamTime = localStorage.getItem("teamTime");
+  const {memberTime} = JSON.parse(getTeamTime);
+
+  memberTime.map((memberTimeTrack) => {
+    globalTimeStorage.push(memberTimeTrack);
+  });
+
+
 };
 
 
 // save changes of new task 
 const saveChanges = () => {
+    var id = Date.now();
     const teamData = {
-      id: Date.now(),
+      id: id,
       name: document.getElementById("memberName").value, 
       address: document.getElementById("email").value,
       password: document.getElementById("passwordMember").value,
@@ -48,6 +58,14 @@ const saveChanges = () => {
   
     globalStorage.push(teamData);
     localStorage.setItem("team", JSON.stringify({teamMembers: globalStorage}));
+
+    const memberTime = {
+      id: id,
+      name: document.getElementById("memberName").value,
+    }
+    globalTimeStorage.push(memberTime);
+    localStorage.setItem("teamTime", JSON.stringify({memberTime: globalTimeStorage}));
+
   };
 
   
@@ -62,6 +80,12 @@ const deleteMember = (event) => {
 
   localStorage.setItem("team", JSON.stringify({teamMembers: globalStorage}));
 
+  globalTimeStorage = globalTimeStorage.filter(
+    (memberObject) => memberObject.id != targetId
+  );
+
+  localStorage.setItem("teamTime", JSON.stringify({memberTime: globalTimeStorage}));
+
   if (tagName == "BUTTON") {
     return TeamAdding.removeChild(
       event.target.parentNode.parentNode.parentNode
@@ -71,3 +95,19 @@ const deleteMember = (event) => {
   }
 
 };
+
+const memberPressed = event => {
+  event = window.event;
+  var targetId = event.target.id;
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.id;
+  }
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.parentNode.id;
+  }
+  console.log(targetId)
+  localStorage.setItem("currentMember", targetId)
+  // window.location.replace("taskDeatils.html");
+}
