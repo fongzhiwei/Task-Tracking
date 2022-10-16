@@ -133,14 +133,12 @@ const saveTime = (time) =>{
       
 
       globalTimeStorage.forEach(function (teamMember){
-        if (teamMember.name == member){
-            console.log("yes");
+        if (teamMember.name == member){    
             if (teamMember.hasOwnProperty(today)){
                 teamMember[today] += time;
             }
             else {
                 teamMember[today] = time;
-                console.log("no");
             }
         }
         
