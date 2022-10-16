@@ -8,7 +8,7 @@ const generateNewCard = (member) => `
           <i class="fas fa-trash-alt"id=${member.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteMember.apply(this, arguments)" ></i>
         </button>
         <div id = "analytics">
-          <a href="graph.html"><span class="material-symbols-outlined">monitoring</span></a>
+          <a href="graph.html" onclick="memberPressed()"><span class="material-symbols-outlined" id=${member.id}>monitoring</span></a>
         </div>
       </div>
 
@@ -95,3 +95,19 @@ const deleteMember = (event) => {
   }
 
 };
+
+const memberPressed = event => {
+  event = window.event;
+  var targetId = event.target.id;
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.id;
+  }
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.parentNode.id;
+  }
+  console.log(targetId)
+  localStorage.setItem("currentMember", targetId)
+  // window.location.replace("taskDeatils.html");
+}
