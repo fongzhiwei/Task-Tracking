@@ -7,6 +7,9 @@ const generateNewCard = (member) => `
         <button type="button" class="btn btn-outline-danger" id=${member.id} class="asa" onclick="deleteMember.apply(this, arguments)" data-bs-target="#animateModal" data-bs-toggle="modal" >
           <i class="fas fa-trash-alt"id=${member.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteMember.apply(this, arguments)" ></i>
         </button>
+        <div id = "analytics">
+          <a href="graph.html"><span class="material-symbols-outlined">monitoring</span></a>
+        </div>
       </div>
 
     <p id="name">Member Name: ${member.name}</p>
