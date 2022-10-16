@@ -3,16 +3,16 @@ const TeamAdding = document.querySelector(".display");
 const generateNewCard = (member) => `
 <div class = "card" id=${member.id}>
   <div id="upperLine">
-    <div id="statusButtons"> 
-      <button type="button" class="btn btn-outline-danger" id=${member.id} class="asa" onclick="deleteMember.apply(this, arguments)" data-bs-target="#animateModal" data-bs-toggle="modal" >
-        <i class="fas fa-trash-alt"id=${member.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteMember.apply(this, arguments)" ></i>
-      </button>
-    </div>
+      <div id="statusButtons"> 
+        <button type="button" class="btn btn-outline-danger" id=${member.id} class="asa" onclick="deleteMember.apply(this, arguments)" data-bs-target="#animateModal" data-bs-toggle="modal" >
+          <i class="fas fa-trash-alt"id=${member.id} data-bs-target="#animateModal" data-bs-toggle="modal" onclick="deleteMember.apply(this, arguments)" ></i>
+        </button>
+      </div>
 
     <p id="name">Member Name: ${member.name}</p>
     
     <p id="Email">Member Name: ${member.address}</p>   
-  </div>
+    </div>
 </div>`
 ;
 
@@ -47,4 +47,24 @@ const saveChanges = () => {
     localStorage.setItem("team", JSON.stringify({teamMembers: globalStorage}));
   };
 
+  
+const deleteMember = (event) => {
+  event = window.event;
+  const targetId = event.target.id;
+  const tagName = event.target.tagName;
 
+  globalStorage = globalStorage.filter(
+    (taskObject) => taskObject.id != targetId
+  );
+
+  localStorage.setItem("team", JSON.stringify({teamMembers: globalStorage}));
+
+  if (tagName == "BUTTON") {
+    return TeamAdding.removeChild(
+      event.target.parentNode.parentNode.parentNode
+    );
+  } else {
+    return TeamAdding.removeChild(event.target.parentNode.parentNode.parentNode.parentNode);
+  }
+
+};
