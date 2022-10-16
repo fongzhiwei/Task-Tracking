@@ -1,5 +1,6 @@
 //getting task conatainer to add tasks
 const taskCreation = document.querySelector(".task_creation");
+const memberList = document.querySelector("#addMember");
 
 // new task template
 const generateNewTask = (taskData) => `
@@ -34,6 +35,7 @@ const generateNewTask = (taskData) => `
 
 // declaring an empty array to store data
 let globalStorage = [];
+let globalTeamStorage = [];
 
 // get task data from local storage
 const loadTaskData = () => {
@@ -45,6 +47,18 @@ const loadTaskData = () => {
 
     globalStorage.push(taskObject);
   });
+
+  const getTeamData = localStorage.getItem("team");
+  const {teamMembers} = JSON.parse(getTeamData);
+
+  teamMembers.map((member) => {
+    globalTeamStorage.push(member);
+    var el = document.createElement("option");
+    el.textContent = member.name;
+    el.value = member.name;
+    memberList.appendChild(el);
+  });
+
 };
 
 // save changes of new task 

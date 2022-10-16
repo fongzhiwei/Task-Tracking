@@ -39,8 +39,17 @@ const loadTaskDetail = () => {
             member.innerText = taskObject.addMember
             const description = document.getElementById("description")
             description.innerText = taskObject.taskDesc
+
+            totalTime = taskObject.timeTotal
+            hour = Math.floor(totalTime / 3600); // get minutes value (quotient of totalTime)
+            minute = Math.floor(totalTime / 60); // get minutes value (quotient of totalTime)
+            while(minute > 60){
+                minute-=60;
+            }
+            second = Math.floor(totalTime % 60); // get seconds value (remainder of totalTime)
             const timer = document.getElementById("timer")
-            timer.innerText = taskObject.timeTotal
+            timer.innerText = hour+":"+ minute + ":" + second;
+            
         }
     });
 
@@ -66,8 +75,11 @@ function startTimeCounter() {
     var hour = Math.floor(diff / 3600); // get minutes value (quotient of diff)
     var minute = Math.floor(diff / 60); // get minutes value (quotient of diff)
     var second = Math.floor(diff % 60); // get seconds value (remainder of diff)
-    hour = checkTime(hour); // add a leading zero if it's single digi
+    hour = checkTime(hour); // add a leading zero if it's single digit
     minute = checkTime(minute); // add a leading zero if it's single digit
+    while(minute > 60){
+        minute-=60;
+    }
     second = checkTime(second); // add a leading zero if it's single digit
     document.getElementById("elapsedTime").innerHTML = hour+":"+ minute + ":" + second; // update the element where the timer will appear
     t = setTimeout(startTimeCounter, 500); // set a timeout to update the timer
@@ -128,19 +140,17 @@ const saveTime = (time) =>{
       var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
       var yyyy = today.getFullYear();
       
-      today = mm + '/' + dd + '/' + yyyy;
+      today = dd + '/' + mm + '/' + yyyy;
       console.log(today)
       
 
       globalTimeStorage.forEach(function (teamMember){
-        if (teamMember.name == member){
-            console.log("yes");
+        if (teamMember.name == member){    
             if (teamMember.hasOwnProperty(today)){
                 teamMember[today] += time;
             }
             else {
                 teamMember[today] = time;
-                console.log("no");
             }
         }
         
