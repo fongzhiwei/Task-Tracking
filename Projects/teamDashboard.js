@@ -1,4 +1,4 @@
-teamDetail = document.querySelector("[id=memberList]")
+const TeamDetail = document.querySelector("[id=memberList]");
 
 const openMemberModal=()=>{
     const open = document.getElementById("myModal");
@@ -24,12 +24,12 @@ const loadMemberDetail = () => {
     const getMemberData = localStorage.getItem("team");
     const {team} = JSON.parse(getMemberData);
     i = 0;
-    team.map((memberData) => {
-        globalStorage.push(memberData)
-        
 
-        generateNewSection(memberData,count);
+    team.map((memberData) => {
+        TeamDetail.insertAdjacentHTML("beforeend", generateNewCard(memberData,count));
+        globalStorage.push(member);
         count++;
+        
     });
 
 };
