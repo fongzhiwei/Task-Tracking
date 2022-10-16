@@ -14,7 +14,7 @@ const generateNewCard = (member) => `
 
     <p id="name">Member Name: ${member.name}</p>
     
-    <p id="Email">Member Name: ${member.address}</p>   
+    <p id="Email">Member Address: ${member.address}</p>   
     </div>
 </div>`
 ;

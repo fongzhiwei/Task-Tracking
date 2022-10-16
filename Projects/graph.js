@@ -21,7 +21,6 @@ const loadMemberDetail = () => {
   var yyyy = today.getFullYear();
   
   var dateToday = dd + '/' + mm + '/' + yyyy;
-  console.log(dateToday)
 
   dd= String(today.getDate()-1).padStart(2, '0');
   var dateOneDayAgo = dd + '/' + mm + '/' + yyyy;
