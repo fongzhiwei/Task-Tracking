@@ -95,7 +95,7 @@ div.display{
 }
 
 div#upperLine{
-    width: 360px;
+    width: 380px;
     display: block;
     margin-left: 15px;
     margin-top: 15px;
@@ -104,4 +104,10 @@ div#upperLine{
 #statusButtons{
     float: right;
     margin-bottom: 5px;
+}
+
+div#analytics {
+    margin-top: -30px;
+    margin-left: 50px;
+    margin-right: 15px;
 }
