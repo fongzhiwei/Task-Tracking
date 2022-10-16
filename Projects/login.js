@@ -1,10 +1,12 @@
-
 function check(){
 
     const member = JSON.parse(localStorage.getItem('team'));
 
     const membersAddress = [];
     const membersPw = [];
+
+    const defAddress = "admin";
+    const defPw = "admin"
 
     for (var i = 0; i < member.teamMembers.length; i++) {
         membersAddress[i] = member.teamMembers[i].address;
@@ -24,8 +26,11 @@ function check(){
             alert('Wrong Password');
         }
     }
+    else if(userAdr === defAddress && userPw === defPw){
+        location.replace("index-d.html");
+    }
     else{
-        alert("Invalid Email")
+        alert("Login Failed. Invalid Authentication")
     }
 
 }
