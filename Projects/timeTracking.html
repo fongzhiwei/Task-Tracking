@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="timeTracking.css">
 
 </head>
-<body>
+<body onload="openTaskModal()">
     <a href="sprintDetails.html"><button type="button" id = "buttonBack" class="btn btn-primary btn-default active">Back</button></a>
     <div class="main">
         <header><h1>Time Tracker</h1></header>
@@ -45,13 +45,13 @@
         </div>
 
         <div class = "tracker">
-            <div class="time">
+            <div class="time" id="elapsedTime">
                 00:00:00
             </div>
             <div class="status">
-                <button id = "start">Start</button>
-                <button id = "stop">Stop</button>
-                <button id = "reset">Reset</button>
+                <button id = "start" onclick="startTime()">Start</button>
+                <button id = "stop" onclick="stopTime()">Stop</button>
+                <button id = "reset" onclick="resetTime()">Reset</button>
             </div>
         </div>
     </div>
