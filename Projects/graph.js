@@ -41,7 +41,7 @@ const loadMemberDetail = () => {
   var dateSixDayAgo = dd + '/' + mm + '/' + yyyy;
   
   memberTime.map((memberTimeTrack) => {
-    if(memberTimeTrack.id = currentMemberID){
+    if(memberTimeTrack.id == currentMemberID){
       if(memberTimeTrack.hasOwnProperty(dateToday)){
         day7=memberTimeTrack[dateToday];
         day7=day7/3600;

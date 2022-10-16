@@ -42,11 +42,14 @@ const loadTaskDetail = () => {
 
             totalTime = taskObject.timeTotal
             hour = Math.floor(totalTime / 3600); // get minutes value (quotient of totalTime)
+            hour = checkTime(hour);
             minute = Math.floor(totalTime / 60); // get minutes value (quotient of totalTime)
             while(minute > 60){
                 minute-=60;
             }
+            minute = checkTime(minute);
             second = Math.floor(totalTime % 60); // get seconds value (remainder of totalTime)
+            second = checkTime(second);
             const timer = document.getElementById("timer")
             timer.innerText = hour+":"+ minute + ":" + second;
             

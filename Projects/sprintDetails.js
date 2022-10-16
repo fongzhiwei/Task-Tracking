@@ -8,24 +8,24 @@ const openModal=()=>{
 let globalStorage = [];
 
 const generateNewTask = (taskData) => `
-<div class ="displayTaskSlot">
+<div class ="displayTaskSlot" onclick="taskPressed()">
   <div class="mt-3">
     <div class="card shadow-sm task__card">
 
-      <div class="card-header d-flex justify-content-end task__card__header">
+      <div class="card-header d-flex justify-content-end task__card__header" id=${taskData.id}>
       </div>
 
-      <div class="card-body">
+      <div class="card-body" id=${taskData.id}>
         <h2 class="task__card__name" id="name">${taskData.taskName}
         </h2>
           <form>
-            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" style="background-color: red"; id="priority">${taskData.taskPriority}</span>
-            <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="story">${taskData.storyPoint}</span>
+            <div class="tags text-white flex-wrap"id=${taskData.id}><span class="badge bg-primary m-1" style="background-color: red"; id="priority">${taskData.taskPriority}</span>
+            <div class="tags text-white flex-wrap"id=${taskData.id}><span class="badge bg-success m-1" id="story">${taskData.storyPoint}</span>
           </form>
 
           <form>
-            <div class="tags text-white flex-wrap"><span class="badge bg-success m-1" id="type">${taskData.taskType}</span>
-            <div class="tags text-white flex-wrap"><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span>
+            <div class="tags text-white flex-wrap"id=${taskData.id}><span class="badge bg-success m-1" id="type">${taskData.taskType}</span>
+            <div class="tags text-white flex-wrap"id=${taskData.id}><span class="badge bg-primary m-1" id="status">${taskData.taskStatus}</span>
           </form>
       </div>
     </div>
@@ -83,3 +83,19 @@ const loadSprintData = () => {
     });
 
 };
+
+const taskPressed = event => {
+  event = window.event;
+  var targetId = event.target.id;
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.id;
+  }
+
+  if (/[a-z]/i.test(targetId)){
+    targetId = event.target.parentNode.parentNode.id;
+  }
+  console.log(targetId)
+  localStorage.setItem("taskDetail", targetId)
+  window.location.replace("timeTracking.html");
+}
