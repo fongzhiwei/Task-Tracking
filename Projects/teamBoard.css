@@ -1,0 +1,113 @@
+/* Styling for the whole board */
+*{
+    font-family: 'Mukta', sans-serif; 
+}
+
+body {
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+/* Navigation styling */
+.dashboard .navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -5px;
+}
+
+.dashboard .navigation img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.dashboard .navigation div .material-symbols-outlined {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+.dashboard .navigation,
+    .dashboard .navigation div span 
+    {
+        display: block;
+    }
+
+.dashboard .navigation 
+{
+    width: 60px;
+    position: fixed;
+    z-index: 10px;
+}
+
+section.main 
+{
+    margin-left: 90px;
+    margin-right: 20px;
+}
+
+.dashboard .navigation div 
+{
+    margin-top: 30vh;
+    margin-bottom: 19vh;
+}
+
+.dashboard .navigation div span 
+{
+    margin-top: 5vh;
+}
+
+/* Title */
+.dashboard .main .title {
+    margin-top: 50px;
+}
+
+.dashboard .main .title h1{
+    font-size: 35px;
+}
+
+.dashboard .main .title .container button {
+    float: right;
+    margin-top: -65px;
+    margin-right: -100px;
+}
+.formDiv{
+    display: flex;
+}
+
+div.display{
+    width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.card{
+    background-color:#fff;
+    width: 400px;
+    height: 110px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 25px;
+    border: 2px, 2px, 2px, 2px;
+    margin-top: 40px;
+    margin-left: 80px;
+}
+
+div#upperLine{
+    width: 380px;
+    display: block;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#statusButtons{
+    float: right;
+    margin-bottom: 5px;
+}
+
+div#analytics {
+    margin-top: -30px;
+    margin-left: 50px;
+    margin-right: 15px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint Tracking</title>
+    <link rel="stylesheet" href="timeTracking.css">
+
+</head>
+<body onload="openTaskModal()">
+    <a href="sprintDetails.html"><button type="button" id = "buttonBack" class="btn btn-primary btn-default active">Back</button></a>
+    <div class="main">
+        <header><h1>Time Tracker</h1></header>
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+          
+                <!-- Modal body -->
+                <div class="modal-body">  
+                    <div class="mb-2" id="nameDiv">
+                        <div><p><b>Task Name: </b></p></div><div class="text"><p id="name"></p></div>
+                    </div>
+                    <div class="mb-2" id="typeDiv">
+                        <div><p><b>Task Type: </b></p></div><p id="type"></p>
+                    </div>
+                    <div class="mb-2" id="storyDiv">
+                        <div><p><b>Story Point: </b></p></div><p id="story"></p>
+                    </div>
+                    <div class="mb-2" id="priorityDiv">
+                        <div><p><b>Task priority:  </b></p></div><p id="priority"></p>
+                    </div>
+                    <div class="mb-2" id="statusDiv">
+                        <div><p><b>Task Status: </b></p></div><p id="status"></p>
+                    </div>
+                    <div class="mb-2" id="memberDiv">
+                        <div><p><b>Members: </b></p></div><p id="member"></p>
+                    </div>
+                    <div class="mb-2" id="descripDiv">
+                        <div><p><b>Task Description: </b></p></div> <p id="description"></p>
+                    </div>  
+                    <div class="mb-2" id="timeDiv">
+                        <div><p><b>Total Time: </b></p></div> <p id="timer"></p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <div class = "tracker">
+            <div class="time" id="elapsedTime">
+                00:00:00
+            </div>
+            <div class="status">
+                <button id = "start" onclick="startTime()">Start</button>
+                <button id = "stop" onclick="stopTime()">Stop</button>
+                <button id = "reset" onclick="resetTime()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="timeTracking.js"></script>
+</body>
+</html>

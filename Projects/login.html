@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="tit"><b>Good To See You Again</b></div>
-        <input type="text" placeholder="Account">
-        <input type="password" placeholder="Password">
-        <form action="index-d.html">
-            <button>Login</button>
-        </form>
+        <input type="text" placeholder="Account" id = "userAddress">
+        <input type="password" placeholder="Password" id = "userPw">
+        <button onclick="check()">Login</button>
+        <!-- <form action="index-d.html">
+            <button onclick="check()">Login</button>
+        </form> -->
     </div>
     <div class="square">
         <ul>
