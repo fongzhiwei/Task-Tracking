@@ -36,7 +36,7 @@ const loadTeamData = () => {
   var dateToday = dd + '/' + mm + '/' + yyyy;
 
   memberTime.map((memberTimeTrack) => {
-    // document.getElementById(memberTimeTrack.id).innerHTML = memberTimeTrack[dateToday]/3600 + " Hours";
+    document.getElementById(memberTimeTrack.id).innerHTML = memberTimeTrack[dateToday]/3600 + " Hours";
     globalTimeStorage.push(memberTimeTrack);
   });
 };
