@@ -1,4 +1,3 @@
-
 function check(){
 
     const member = JSON.parse(localStorage.getItem('team'));
