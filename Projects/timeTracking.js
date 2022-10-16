@@ -38,7 +38,9 @@ const loadTaskDetail = () => {
             const member = document.getElementById("member")
             member.innerText = taskObject.addMember
             const description = document.getElementById("description")
-            description.innerText =taskObject.taskDesc
+            description.innerText = taskObject.taskDesc
+            const timer = document.getElementById("timer")
+            timer.innerText = taskObject.timeTotal
         }
     });
 
