@@ -1,3 +1,7 @@
+let t;
+let started = true;
+let elapsedTime = 0;
+
 const openTaskModal=()=>{
     const open = document.getElementById("myModal");
     open.style.display= "block";
@@ -34,4 +38,65 @@ const loadTaskDetail = () => {
         }
     });
 
+};
+
+
+function startTimeCounter() {
+    started = true;
+    var startTime = localStorage.getItem("startTime");
+    var now = Math.floor(Date.now() / 1000); // get the time now
+    var diff = now - startTime + elapsedTime; // diff in seconds between now and start
+    var hour = Math.floor(diff / 3600); // get minutes value (quotient of diff)
+    var minute = Math.floor(diff / 60); // get minutes value (quotient of diff)
+    var second = Math.floor(diff % 60); // get seconds value (remainder of diff)
+    hour = checkTime(hour); // add a leading zero if it's single digi
+    minute = checkTime(minute); // add a leading zero if it's single digit
+    second = checkTime(second); // add a leading zero if it's single digit
+    document.getElementById("elapsedTime").innerHTML = hour+":"+ minute + ":" + second; // update the element where the timer will appear
+    t = setTimeout(startTimeCounter, 500); // set a timeout to update the timer
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+
+const startTime = () =>{
+
+    var startTime = Math.floor(Date.now() / 1000); //Get the starting time (right now) in seconds
+    localStorage.setItem("startTime", startTime); // Store it if I want to restart the timer on the next page
+
+    startTimeCounter();
+}
+
+const stopTime = () =>{
+    var startTime = localStorage.getItem("startTime");
+    clearTimeout(t);
+    var stopTime = Math.floor(Date.now() / 1000); //Get the starting time (right now) in seconds
+    localStorage.setItem("stopTime", stopTime); // Store it if I want to restart the timer on the next page
+    elapsedTime += stopTime-startTime;
+    saveTime(stopTime-startTime);
+
+}
+
+const resetTime = () =>{
+    clearTimeout(t);
+    started = false;
+    elapsedTime = 0;
+    document.getElementById("elapsedTime").innerHTML = "00:00:00"; // update the element where the timer will appear
+}
+
+
+const saveTime = (time) =>{
+    const taskID = localStorage.getItem("taskDetail");
+    globalStorage.forEach(function (taskItem){
+        if (taskItem.id == taskID){
+            if (taskItem.hasOwnProperty("timeTotal")){
+                taskItem.timeTotal += time;
+            }
+            else {taskItem.timeTotal = time;}
+        }
+      })
+      localStorage.setItem("task", JSON.stringify({task: globalStorage}));
 };
