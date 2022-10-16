@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="teamDashboard.css">
 
 </head>
-<body>
+<body onload = "loadMemberDetail()">
     <div class = "dashboard"><!-- Dashboard -->
         <section class = "navigation"><!-- Navigation -->
             <a href="index-d.html"><img src="image/logo.png" alt="Web Logo" class = "logo"></a>
@@ -80,7 +80,7 @@
                             <th>Average Working Time</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id = "memberList">
                         <tr>
                             <td>01</td>
                             <td>John</td>
