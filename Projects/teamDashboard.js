@@ -3,3 +3,5 @@ const openMemberModal=()=>{
     open.style.display= "block";
     loadTaskDetail();
 };
+
+let globalStorage = [];
