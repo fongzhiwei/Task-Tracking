@@ -159,6 +159,45 @@ const saveTime = (time) =>{
         
       })
       localStorage.setItem("teamTime", JSON.stringify({memberTime: globalTimeStorage}));
-
-      
 };
+
+const saveManualInput= () =>{
+    var date = document.getElementById("inputDate").value;
+    date = date.split("-").reverse().join("-");
+    date = date.replaceAll("-","/");
+    
+    var time = document.getElementById("inputMinutes").value;
+    time = Math.floor(time * 60);
+
+
+    var member ="";
+    const taskID = localStorage.getItem("taskDetail");
+    globalStorage.forEach(function (taskItem){
+        if (taskItem.id == taskID){
+            member = taskItem.addMember;
+            console.log(member);
+            if (taskItem.hasOwnProperty("timeTotal")){
+                taskItem.timeTotal += time;
+            }
+            else {taskItem.timeTotal = time;}
+        }
+      })
+      localStorage.setItem("task", JSON.stringify({task: globalStorage}));
+      
+
+      globalTimeStorage.forEach(function (teamMember){
+        if (teamMember.name == member){    
+            if (teamMember.hasOwnProperty(date)){
+                teamMember[date] += time;
+            }
+            else {
+                teamMember[date] = time;
+            }
+        }
+        
+      })
+      localStorage.setItem("teamTime", JSON.stringify({memberTime: globalTimeStorage}));
+
+      window.location.reload();
+
+}
