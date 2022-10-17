@@ -1,3 +1,5 @@
+const memberList = document.querySelector("#editAddMember");
+
 const openTaskModal=()=>{
     const open = document.getElementById("myModal");
     open.style.display= "block";
@@ -6,6 +8,7 @@ const openTaskModal=()=>{
 
 // declaring an empty array to store data
 let globalStorage = [];
+let globalTeamStorage = [];
 
 // get task data from local storage
 const loadTaskDetail = () => {
@@ -32,6 +35,17 @@ const loadTaskDetail = () => {
             const description = document.getElementById("description")
             description.innerText =taskObject.taskDesc
         }
+    });
+
+    const getTeamData = localStorage.getItem("team");
+    const {teamMembers} = JSON.parse(getTeamData);
+  
+    teamMembers.map((member) => {
+      globalTeamStorage.push(member);
+      var el = document.createElement("option");
+      el.textContent = member.name;
+      el.value = member.name;
+      memberList.appendChild(el);
     });
 
 };
